@@ -1,7 +1,26 @@
 import { ChevronRightIcon, SearchIcon } from "@heroicons/react/outline";
+import { atom, useAtom } from "jotai";
 import React from "react";
 
+const searchAtom = atom("");
+const restaurantListAtom = atom<Array<{ name: string }>>([
+  { name: "Chinese Noodle Shop" },
+  { name: "Frankie's crêpe shop" },
+]);
+const filteredRestaurantListAtom = atom((get) => {
+  const search = get(searchAtom).toLowerCase();
+  return get(restaurantListAtom).filter((restaurant) =>
+    restaurant.name.toLowerCase().includes(search)
+  );
+});
+
 export const App = () => {
+  const [search, setSearch] = useAtom(searchAtom);
+  const [restaurantList] = useAtom(filteredRestaurantListAtom);
+  const handleSearchInputChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => setSearch(event.target.value);
+
   return (
     <div className="p-4">
       <div className="container mx-auto rounded-xl overflow-hidden">
@@ -12,9 +31,10 @@ export const App = () => {
           <div className="bg-white flex items-center rounded-xl shadow-xl">
             <input
               className="rounded-l-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
-              id="search"
               type="text"
               placeholder="Search"
+              value={search}
+              onChange={handleSearchInputChange}
             />
             <div className="p-1">
               <button className="text-red-700 rounded-full p-2 hover:bg-red-200 focus:outline-none w-8 h-8 flex items-center justify-center">
@@ -26,8 +46,9 @@ export const App = () => {
         <div className="bg-red-100 p-2">
           <h2 className="text-red-800 py-2 px-3">Restaurants</h2>
           <ul className="bg-white rounded-lg overflow-hidden">
-            <RestaurantListItem name="Chinese Noodle Shop" />
-            <RestaurantListItem name="Frankie's crêpe shop" />
+            {restaurantList.map((restaurant) => (
+              <RestaurantListItem name={restaurant.name} />
+            ))}
           </ul>
         </div>
       </div>
