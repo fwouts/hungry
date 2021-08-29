@@ -6,15 +6,19 @@ import { PickRestaurant } from "./screens/pick-restaurant/PickRestaurant";
 
 export const App = (props: { state: AppState }) => {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <PickRestaurant appState={props.state} />
-        </Route>
-        <Route path="/restaurants/:restaurantId">
-          <PickDishes appState={props.state} />
-        </Route>
-      </Switch>
-    </Router>
+    <div className="p-4">
+      <div className="max-w-prose mx-auto rounded-xl overflow-hidden">
+        <Router>
+          <Switch>
+            <Route path="/" exact>
+              <PickRestaurant appState={props.state} />
+            </Route>
+            <Route path="/restaurants/:restaurantId">
+              <PickDishes appState={props.state} />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </div>
   );
 };

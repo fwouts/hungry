@@ -14,16 +14,14 @@ export const PickRestaurant = (props: { appState: AppState }) => {
   const [search] = useAtom(state.searchAtom);
 
   return (
-    <div className="p-4">
-      <div className="container mx-auto rounded-xl overflow-hidden">
-        <h1 className="bg-red-600 text-white text-lg font-extralight pt-3 px-5">
-          Pick a restaurant
-        </h1>
-        <div className="p-2 bg-gradient-to-b from-red-600 to-red-700">
-          <RestaurantSearchBar state={state} />
-        </div>
-        <RestaurantList restaurantList={restaurantList} searchTerm={search} />
+    <>
+      <h1 className="bg-red-600 text-white text-lg font-extralight pt-3 px-5">
+        Pick a restaurant
+      </h1>
+      <div className="p-2 bg-gradient-to-b from-red-600 to-red-700">
+        <RestaurantSearchBar state={state} />
       </div>
-    </div>
+      <RestaurantList restaurantList={restaurantList} searchTerm={search} />
+    </>
   );
 };

@@ -31,20 +31,18 @@ export const PickDishes = (props: { appState: AppState }) => {
   );
 
   return (
-    <div className="p-4">
-      <div className="container mx-auto rounded-xl overflow-hidden">
-        <div className="bg-red-600 text-white text-lg font-extralight py-2 flex flex-row items-center">
-          <Link to="/" className="w-10 px-2">
-            <ChevronLeftIcon />
-          </Link>
-          <h1>{restaurant.name}</h1>
-        </div>
-        <MenuPicker
-          menu={restaurant.menu}
-          pickedItems={pickedItems}
-          updateItem={updateItem}
-        />
+    <>
+      <div className="bg-red-600 text-white text-lg font-extralight py-2 flex flex-row items-center">
+        <Link to="/" className="w-10 px-2">
+          <ChevronLeftIcon />
+        </Link>
+        <h1>{restaurant.name}</h1>
       </div>
-    </div>
+      <MenuPicker
+        menu={restaurant.menu}
+        pickedItems={pickedItems}
+        updateItem={updateItem}
+      />
+    </>
   );
 };
