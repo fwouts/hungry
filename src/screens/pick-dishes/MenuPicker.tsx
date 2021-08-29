@@ -60,16 +60,18 @@ const MenuItemPicker = ({
   updateItem: UpdateItemFn;
 }) => {
   const count = pickedItems[menuItem.id] || 0;
+  const increaseCount = () => updateItem(menuItem.id, count + 1);
+  const decreaseCount = () => updateItem(menuItem.id, count - 1);
   return (
     <div className="py-2 px-3 flex flex-row justify-between items-center select-none">
-      <div className="h-16 w-16">
+      <div className="h-16 w-16 cursor-pointer" onClick={increaseCount}>
         {menuItem.photoUrl && (
           <img className="rounded-md" src={menuItem.photoUrl} />
         )}
       </div>
       <div
         className="py-3 px-2 flex-grow cursor-pointer"
-        onClick={() => updateItem(menuItem.id, count + 1)}
+        onClick={increaseCount}
       >
         {menuItem.name}
       </div>
@@ -79,16 +81,8 @@ const MenuItemPicker = ({
             {count}
           </span>
           <div className="p-1 flex flex-row">
-            <UpdateCountButton
-              onClick={() => updateItem(menuItem.id, count + 1)}
-            >
-              +
-            </UpdateCountButton>
-            <UpdateCountButton
-              onClick={() => updateItem(menuItem.id, count - 1)}
-            >
-              -
-            </UpdateCountButton>
+            <UpdateCountButton onClick={increaseCount}>+</UpdateCountButton>
+            <UpdateCountButton onClick={decreaseCount}>-</UpdateCountButton>
           </div>
         </div>
       )}
