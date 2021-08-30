@@ -1897,10 +1897,10 @@ vite@^2.4.4, vite@^2.5.1:
   optionalDependencies:
     fsevents "~2.3.2"
 
-viteshot@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/viteshot/-/viteshot-0.2.1.tgz#bb7b9c0af7a535a8fbb705dc5dd24770553d3fff"
-  integrity sha512-Zf8O7vQJebaaJTqlscpr6H4nVNXiHizIcOGuUQ+vhLZ1HlYk/GO1pPsOLtfLPnJaz5ubcjSMVJjxlyysoGmdww==
+viteshot@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/viteshot/-/viteshot-0.2.2.tgz#b78de18cdc9f0545f97267a3db6fb779299768b6"
+  integrity sha512-vO/zJRyq3NSCMna/tsE0tNsKi1xq7Kks2ss2EJqAxxhrufvtXKzQ5xdXn/W20NS/5VY+7Utm1I8ZB0j3Djuq4Q==
   dependencies:
     "@svgr/core" "^5.5.0"
     assert-never "^1.2.1"
