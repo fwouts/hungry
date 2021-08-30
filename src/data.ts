@@ -219,7 +219,7 @@ const MENU_ITEMS: MenuItem[] = [
   },
 ];
 
-function getMenuItem(id: string): MenuItem {
+export function getMenuItemData(id: string): MenuItem {
   return MENU_ITEMS.find((m) => m.id === id)!;
 }
 
@@ -230,12 +230,12 @@ export const RESTAURANT_LIST: Restaurant[] = [
     photoUrl:
       "https://images.unsplash.com/flagged/photo-1556742524-750f2ab99913?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
     menu: [
-      getMenuItem("M1"),
-      getMenuItem("M2"),
-      getMenuItem("M3"),
-      getMenuItem("M4"),
-      getMenuItem("V1"),
-      getMenuItem("V2"),
+      getMenuItemData("M1"),
+      getMenuItemData("M2"),
+      getMenuItemData("M3"),
+      getMenuItemData("M4"),
+      getMenuItemData("V1"),
+      getMenuItemData("V2"),
     ],
   },
 
@@ -245,12 +245,12 @@ export const RESTAURANT_LIST: Restaurant[] = [
     photoUrl:
       "https://images.unsplash.com/photo-1559667709-eabb5b50117a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
     menu: [
-      getMenuItem("V3"),
-      getMenuItem("V4"),
-      getMenuItem("V5"),
-      getMenuItem("V6"),
-      getMenuItem("M5"),
-      getMenuItem("M6"),
+      getMenuItemData("V3"),
+      getMenuItemData("V4"),
+      getMenuItemData("V5"),
+      getMenuItemData("V6"),
+      getMenuItemData("M5"),
+      getMenuItemData("M6"),
     ],
   },
 
@@ -260,14 +260,14 @@ export const RESTAURANT_LIST: Restaurant[] = [
     photoUrl:
       "https://images.unsplash.com/photo-1492683513054-55277abccd99?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
     menu: [
-      getMenuItem("D1"),
-      getMenuItem("D2"),
-      getMenuItem("D3"),
-      getMenuItem("D4"),
-      getMenuItem("F1"),
-      getMenuItem("F2"),
-      getMenuItem("F3"),
-      getMenuItem("F4"),
+      getMenuItemData("D1"),
+      getMenuItemData("D2"),
+      getMenuItemData("D3"),
+      getMenuItemData("D4"),
+      getMenuItemData("F1"),
+      getMenuItemData("F2"),
+      getMenuItemData("F3"),
+      getMenuItemData("F4"),
     ],
   },
   {
@@ -276,14 +276,14 @@ export const RESTAURANT_LIST: Restaurant[] = [
     photoUrl:
       "https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
     menu: [
-      getMenuItem("V1"),
-      getMenuItem("V2"),
-      getMenuItem("V3"),
-      getMenuItem("V4"),
-      getMenuItem("V5"),
-      getMenuItem("V6"),
-      getMenuItem("D1"),
-      getMenuItem("D2"),
+      getMenuItemData("V1"),
+      getMenuItemData("V2"),
+      getMenuItemData("V3"),
+      getMenuItemData("V4"),
+      getMenuItemData("V5"),
+      getMenuItemData("V6"),
+      getMenuItemData("D1"),
+      getMenuItemData("D2"),
     ],
   },
   {
@@ -292,12 +292,12 @@ export const RESTAURANT_LIST: Restaurant[] = [
     photoUrl:
       "https://images.unsplash.com/photo-1572083925563-708dcdb63763?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
     menu: [
-      getMenuItem("V1"),
-      getMenuItem("V2"),
-      getMenuItem("V4"),
-      getMenuItem("M1"),
-      getMenuItem("M2"),
-      getMenuItem("M3"),
+      getMenuItemData("V1"),
+      getMenuItemData("V2"),
+      getMenuItemData("V4"),
+      getMenuItemData("M1"),
+      getMenuItemData("M2"),
+      getMenuItemData("M3"),
     ],
   },
   {
@@ -306,10 +306,10 @@ export const RESTAURANT_LIST: Restaurant[] = [
     photoUrl:
       "https://images.unsplash.com/photo-1565087170449-fa23854a6100?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
     menu: [
-      getMenuItem("F1"),
-      getMenuItem("F2"),
-      getMenuItem("F3"),
-      getMenuItem("F4"),
+      getMenuItemData("F1"),
+      getMenuItemData("F2"),
+      getMenuItemData("F3"),
+      getMenuItemData("F4"),
     ],
   },
   {
@@ -318,13 +318,13 @@ export const RESTAURANT_LIST: Restaurant[] = [
     photoUrl:
       "https://images.unsplash.com/photo-1491600395818-515d7b81de11?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
     menu: [
-      getMenuItem("JD1"),
-      getMenuItem("JD2"),
-      getMenuItem("JD3"),
-      getMenuItem("JD4"),
-      getMenuItem("JD5"),
-      getMenuItem("JD6"),
-      getMenuItem("JD7"),
+      getMenuItemData("JD1"),
+      getMenuItemData("JD2"),
+      getMenuItemData("JD3"),
+      getMenuItemData("JD4"),
+      getMenuItemData("JD5"),
+      getMenuItemData("JD6"),
+      getMenuItemData("JD7"),
     ],
   },
   {
@@ -333,12 +333,12 @@ export const RESTAURANT_LIST: Restaurant[] = [
     photoUrl:
       "https://images.unsplash.com/photo-1602273660127-a0000560a4c1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
     menu: [
-      getMenuItem("J1"),
-      getMenuItem("J2"),
-      getMenuItem("J3"),
-      getMenuItem("J4"),
-      getMenuItem("J5"),
-      getMenuItem("J6"),
+      getMenuItemData("J1"),
+      getMenuItemData("J2"),
+      getMenuItemData("J3"),
+      getMenuItemData("J4"),
+      getMenuItemData("J5"),
+      getMenuItemData("J6"),
     ],
   },
   {
@@ -347,14 +347,14 @@ export const RESTAURANT_LIST: Restaurant[] = [
     photoUrl:
       "https://images.unsplash.com/photo-1538128844159-f08f41bfb169?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
     menu: [
-      getMenuItem("J7"),
-      getMenuItem("J8"),
-      getMenuItem("J9"),
-      getMenuItem("J1"),
-      getMenuItem("J2"),
-      getMenuItem("JD5"),
-      getMenuItem("JD1"),
-      getMenuItem("JD2"),
+      getMenuItemData("J7"),
+      getMenuItemData("J8"),
+      getMenuItemData("J9"),
+      getMenuItemData("J1"),
+      getMenuItemData("J2"),
+      getMenuItemData("JD5"),
+      getMenuItemData("JD1"),
+      getMenuItemData("JD2"),
     ],
   },
 ];

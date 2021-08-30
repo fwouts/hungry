@@ -1,22 +1,12 @@
 import React from "react";
+import { getMenuItemData } from "../../../data";
 import { MenuPicker } from "./MenuPicker";
 
 export const Menu = () => (
   <MenuPicker
-    menu={[
-      {
-        id: "foo",
-        name: "Foo",
-      },
-      {
-        id: "bar",
-        name: "Bar",
-        photoUrl:
-          "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-      },
-    ]}
+    menu={[getMenuItemData("JD5"), getMenuItemData("JD7")]}
     pickedItems={{
-      bar: 2,
+      JD7: 2,
     }}
     updateItem={() => {}}
   />

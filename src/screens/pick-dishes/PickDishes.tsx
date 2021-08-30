@@ -35,7 +35,12 @@ export const PickDishes = (props: {
 
   return (
     <>
-      <div className="bg-red-600 text-white text-lg font-extralight py-2 flex flex-row items-center">
+      <div
+        className="text-white text-lg pt-4 pb-32 flex flex-row items-center bg-no-repeat bg-cover bg-center"
+        style={{
+          backgroundImage: `linear-gradient(hsla(0, 0%, 40%, 0.2), hsla(0, 0%, 0%, 0.4)), url('${restaurant.photoUrl}')`,
+        }}
+      >
         <Link to="/" className="w-10 px-2">
           <ChevronLeftIcon />
         </Link>

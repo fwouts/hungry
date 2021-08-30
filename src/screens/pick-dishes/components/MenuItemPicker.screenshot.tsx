@@ -1,25 +1,10 @@
 import React from "react";
+import { getMenuItemData } from "../../../data";
 import { MenuItemPicker } from "./MenuItemPicker";
 
-export const WithoutImage = () => (
+export const Default = () => (
   <MenuItemPicker
-    menuItem={{
-      id: "foo",
-      name: "Foo",
-    }}
-    pickedItems={{}}
-    updateItem={() => {}}
-  />
-);
-
-export const WithImage = () => (
-  <MenuItemPicker
-    menuItem={{
-      id: "foo",
-      name: "Foo",
-      photoUrl:
-        "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    }}
+    menuItem={getMenuItemData("JD4")}
     pickedItems={{}}
     updateItem={() => {}}
   />
@@ -27,12 +12,9 @@ export const WithImage = () => (
 
 export const Picked = () => (
   <MenuItemPicker
-    menuItem={{
-      id: "foo",
-      name: "Foo",
-    }}
+    menuItem={getMenuItemData("JD4")}
     pickedItems={{
-      foo: 3,
+      JD4: 3,
     }}
     updateItem={() => {}}
   />
