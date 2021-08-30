@@ -17,7 +17,7 @@ export const MenuItemPicker = ({
   return (
     <div className="py-2 px-3 flex flex-row justify-between items-center select-none">
       <img
-        className="h-24 w-24 cursor-pointer rounded-md object-cover"
+        className="h-24 w-24 cursor-pointer rounded-md object-cover flex-shrink-0"
         onClick={increaseCount}
         src={
           menuItem.photoUrl ||
