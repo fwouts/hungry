@@ -1,22 +1,22 @@
 import { SearchIcon } from "@heroicons/react/outline";
-import { useAtom } from "jotai";
 import React from "react";
-import { PickRestaurantState } from "./PickRestaurantState";
 
-export const RestaurantSearchBar = (props: { state: PickRestaurantState }) => {
-  const [search, setSearch] = useAtom(props.state.searchAtom);
-
+export const RestaurantSearchBar = (props: {
+  search: string;
+  updateSearch(search: string): void;
+}) => {
   const handleSearchInputChange: React.ChangeEventHandler<HTMLInputElement> = (
     event
-  ) => setSearch(event.target.value);
+  ) => props.updateSearch(event.target.value);
 
   return (
     <div className="bg-white flex items-center rounded-xl shadow-xl">
       <input
         className="rounded-l-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
         type="text"
+        id="search"
         placeholder="Search"
-        value={search}
+        value={props.search}
         onChange={handleSearchInputChange}
       />
       <div className="p-1">

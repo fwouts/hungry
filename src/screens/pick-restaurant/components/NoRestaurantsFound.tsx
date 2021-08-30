@@ -11,7 +11,13 @@ export const NoRestaurantsFound = (props: { searchTerm: string }) => {
           <BanIcon />
         </div>
         <div className="text-gray-700">
-          No restaurants match <b>"{props.searchTerm}"</b>
+          {props.searchTerm ? (
+            <>
+              No restaurants match <b>"{props.searchTerm}"</b>
+            </>
+          ) : (
+            <>No restaurants are available.</>
+          )}
         </div>
       </div>
     </div>

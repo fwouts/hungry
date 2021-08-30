@@ -1,9 +1,10 @@
 import { useAtom } from "jotai";
 import React, { useMemo } from "react";
 import { AppState } from "../../AppState";
+import { NoRestaurantsFound } from "./components/NoRestaurantsFound";
+import { RestaurantList } from "./components/RestaurantList";
+import { RestaurantSearchBar } from "./components/SearchBar";
 import { PickRestaurantState } from "./PickRestaurantState";
-import { RestaurantList } from "./RestaurantList";
-import { RestaurantSearchBar } from "./SearchBar";
 
 export const PickRestaurant = (props: { appState: AppState }) => {
   const state = useMemo(
@@ -11,7 +12,7 @@ export const PickRestaurant = (props: { appState: AppState }) => {
     [props.appState]
   );
   const [restaurantList] = useAtom(state.filteredRestaurantListAtom);
-  const [search] = useAtom(state.searchAtom);
+  const [search, setSearch] = useAtom(state.searchAtom);
 
   return (
     <>
@@ -19,9 +20,12 @@ export const PickRestaurant = (props: { appState: AppState }) => {
         Pick a restaurant
       </h1>
       <div className="p-2 bg-gradient-to-b from-red-600 to-red-700">
-        <RestaurantSearchBar state={state} />
+        <RestaurantSearchBar search={search} updateSearch={setSearch} />
       </div>
-      <RestaurantList restaurantList={restaurantList} searchTerm={search} />
+      <RestaurantList
+        restaurantList={restaurantList}
+        empty={<NoRestaurantsFound searchTerm={search} />}
+      />
     </>
   );
 };

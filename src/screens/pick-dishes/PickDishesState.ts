@@ -11,7 +11,7 @@ export class PickDishesState {
     }
     return match;
   });
-  readonly pickedItems = atom<Record<string, number>>({});
+  readonly pickedItemsAtom = atom<Record<string, number>>({});
 
   constructor(
     private readonly app: AppState,

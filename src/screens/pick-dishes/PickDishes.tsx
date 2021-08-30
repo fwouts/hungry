@@ -2,19 +2,22 @@ import { ChevronLeftIcon } from "@heroicons/react/outline";
 import produce from "immer";
 import { useAtom } from "jotai";
 import React, { useCallback, useMemo } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AppState } from "../../AppState";
-import { MenuPicker, UpdateItemFn } from "./MenuPicker";
+import { UpdateItemFn } from "./components/MenuItemPicker";
+import { MenuPicker } from "./components/MenuPicker";
 import { PickDishesState } from "./PickDishesState";
 
-export const PickDishes = (props: { appState: AppState }) => {
-  const { restaurantId } = useParams<{ restaurantId: string }>();
+export const PickDishes = (props: {
+  appState: AppState;
+  restaurantId: string;
+}) => {
   const state = useMemo(
-    () => new PickDishesState(props.appState, restaurantId),
-    [props.appState, restaurantId]
+    () => new PickDishesState(props.appState, props.restaurantId),
+    [props.appState, props.restaurantId]
   );
   const [restaurant] = useAtom(state.restaurantAtom);
-  const [pickedItems, setPickedItems] = useAtom(state.pickedItems);
+  const [pickedItems, setPickedItems] = useAtom(state.pickedItemsAtom);
   const updateItem = useCallback<UpdateItemFn>(
     (itemId, count) => {
       setPickedItems(

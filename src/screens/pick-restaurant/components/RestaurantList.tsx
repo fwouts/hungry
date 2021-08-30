@@ -1,20 +1,17 @@
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import React from "react";
 import { Link } from "react-router-dom";
-import { Restaurant } from "../../AppState";
-import { NoRestaurantsFound } from "./NoRestaurantsFound";
+import { Restaurant } from "../../../models";
 
 export const RestaurantList = (props: {
-  searchTerm: string;
+  empty?: React.ReactNode;
   restaurantList: Restaurant[];
 }) => {
   return (
     <div className="bg-red-100 p-2">
       <h2 className="text-red-800 py-2 px-3">Restaurants</h2>
       <div className="bg-white rounded-lg overflow-hidden">
-        {props.restaurantList.length === 0 && (
-          <NoRestaurantsFound searchTerm={props.searchTerm} />
-        )}
+        {props.restaurantList.length === 0 && props.empty}
         {props.restaurantList.map((restaurant) => (
           <RestaurantListItem key={restaurant.id} restaurant={restaurant} />
         ))}
