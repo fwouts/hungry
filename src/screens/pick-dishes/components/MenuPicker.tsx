@@ -1,7 +1,6 @@
 import React from "react";
 import { Menu } from "../../../models";
-import { UpdateItemFn } from "./MenuItemPicker";
-import { MenuSectionPicker } from "./MenuSectionPicker";
+import { MenuItemPicker, UpdateItemFn } from "./MenuItemPicker";
 
 export const MenuPicker = ({
   menu,
@@ -14,14 +13,16 @@ export const MenuPicker = ({
 }) => {
   return (
     <div className="bg-red-100 p-2">
-      {menu.map((menuSection) => (
-        <MenuSectionPicker
-          key={menuSection.id}
-          menuSection={menuSection}
-          pickedItems={pickedItems}
-          updateItem={updateItem}
-        />
-      ))}
+      <div className="bg-white rounded-lg overflow-hidden">
+        {menu.map((menuItem) => (
+          <MenuItemPicker
+            key={menuItem.id}
+            menuItem={menuItem}
+            pickedItems={pickedItems}
+            updateItem={updateItem}
+          />
+        ))}
+      </div>
     </div>
   );
 };
