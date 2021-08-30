@@ -31,6 +31,7 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-yarn-
       - run: yarn --frozen-lockfile
+      - run: yarn playwright install
       - run: yarn viteshot -p
       - uses: actions/upload-artifact@v2
         if: failure()

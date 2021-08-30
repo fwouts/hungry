@@ -5,13 +5,7 @@ export interface Restaurant {
   menu: Menu;
 }
 
-export type Menu = MenuSection[];
-
-export interface MenuSection {
-  id: string;
-  title: string;
-  items: MenuItem[];
-}
+export type Menu = MenuItem[];
 
 export interface MenuItem {
   id: string;
