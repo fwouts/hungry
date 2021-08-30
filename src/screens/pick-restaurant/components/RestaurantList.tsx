@@ -9,7 +9,6 @@ export const RestaurantList = (props: {
 }) => {
   return (
     <div className="bg-red-100 p-2">
-      <h2 className="text-red-800 py-2 px-3">Restaurants</h2>
       <div className="bg-white rounded-lg overflow-hidden">
         {props.restaurantList.length === 0 && props.empty}
         {props.restaurantList.map((restaurant) => (
@@ -23,10 +22,15 @@ export const RestaurantList = (props: {
 const RestaurantListItem = ({ restaurant }: { restaurant: Restaurant }) => {
   return (
     <Link
-      className="py-2 px-3 cursor-pointer text-black hover:bg-red-50 hover:text-red-800 flex flex-row justify-between"
+      className="pt-28 pb-6 px-3 cursor-pointer text-white text-xl filter hover:brightness-150 flex flex-row justify-between bg-no-repeat bg-cover bg-center"
       to={`/restaurants/${restaurant.id}`}
+      style={{
+        backgroundImage: `linear-gradient(hsla(0, 0%, 40%, 0.2), hsla(0, 0%, 0%, 0.4)), url('${restaurant.photoUrl}')`,
+      }}
     >
-      <div>{restaurant.name}</div>
+      <div className="rounded-md bg-gray-600 bg-opacity-60 p-2">
+        {restaurant.name}
+      </div>
       <div className="w-6">
         <ChevronRightIcon />
       </div>

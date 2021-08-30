@@ -17,7 +17,7 @@ export const MenuItemPicker = ({
   return (
     <div className="py-2 px-3 flex flex-row justify-between items-center select-none">
       <img
-        className="h-16 w-16 cursor-pointer rounded-md object-cover"
+        className="h-24 w-24 cursor-pointer rounded-md object-cover"
         onClick={increaseCount}
         src={
           menuItem.photoUrl ||
@@ -25,7 +25,7 @@ export const MenuItemPicker = ({
         }
       />
       <div
-        className="py-3 px-2 flex-grow cursor-pointer"
+        className="py-2 px-3 flex-grow cursor-pointer font-light self-stretch flex flex-row items-center"
         onClick={increaseCount}
       >
         {menuItem.name}

@@ -6,7 +6,10 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      filter: ['hover'],
+      brightness: ['hover']
+    },
   },
   plugins: [],
 };
