@@ -12,6 +12,6 @@ const Template: Story<HeroHeaderProps> = (args) => <HeroHeader {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-  title: "design/Restaurant name",
+  title: "Restaurant name",
   photoUrl: RESTAURANT_LIST[0].photoUrl,
 };

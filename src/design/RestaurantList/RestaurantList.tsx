@@ -1,6 +1,8 @@
 import { ChevronRightIcon } from "@heroicons/react/outline";
+import { preview } from "@reactpreview/config";
 import React from "react";
 import { Link } from "react-router-dom";
+import { RESTAURANT_LIST } from "../../data";
 import { RestaurantItem } from "./RestaurantItem";
 
 export const RestaurantList = (props: {
@@ -18,6 +20,12 @@ export const RestaurantList = (props: {
     </div>
   );
 };
+
+preview(RestaurantList, {
+  example: {
+    restaurantList: RESTAURANT_LIST,
+  },
+});
 
 const RestaurantListItem = ({ restaurant }: { restaurant: RestaurantItem }) => {
   return (

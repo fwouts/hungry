@@ -1430,6 +1430,11 @@
     "@reactpreview/core" "0.6.1"
     commander "^8.2.0"
 
+"@reactpreview/config@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@reactpreview/config/-/config-0.3.1.tgz#54e4aaa5281738fd05ef51224f134ebab767d29f"
+  integrity sha512-r7KEMFnTf5wXc8WZXEo9P3ZSwN5nsI/8k8hrwNOiTFTXLrXjDPVKKU9v7dSgJ51fGGwYmLeSFHMNfoNWMatPeQ==
+
 "@reactpreview/core@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@reactpreview/core/-/core-0.6.1.tgz#9ff210072c92807122a6bc8c628e2e92a8e18175"

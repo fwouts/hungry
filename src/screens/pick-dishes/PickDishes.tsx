@@ -1,7 +1,9 @@
+import { preview } from "@reactpreview/config";
 import produce from "immer";
 import { useAtom } from "jotai";
 import React, { useCallback, useMemo } from "react";
 import { AppState, Restaurant } from "../../AppState";
+import { RESTAURANT_LIST } from "../../data";
 import { HeroHeader } from "../../design/HeroHeader/HeroHeader";
 import { MenuPicker } from "../../design/MenuPicker/MenuPicker";
 import { PickDishesState } from "./PickDishesState";
@@ -45,6 +47,13 @@ export const PickDishes = (props: {
     />
   );
 };
+
+preview(PickDishes, {
+  example: {
+    appState: new AppState(RESTAURANT_LIST),
+    restaurantId: RESTAURANT_LIST[0].id,
+  },
+});
 
 export const PickDishesStateless = (props: {
   restaurant: Restaurant;

@@ -1,6 +1,8 @@
+import { preview } from "@reactpreview/config";
 import { useAtom } from "jotai";
 import React, { useMemo } from "react";
 import { AppState, Restaurant } from "../../AppState";
+import { RESTAURANT_LIST } from "../../data";
 import { NoMatch } from "../../design/NoMatch/NoMatch";
 import { RestaurantList } from "../../design/RestaurantList/RestaurantList";
 import { SearchHeader } from "../../design/SearchHeader/SearchHeader";
@@ -23,6 +25,12 @@ export const PickRestaurant = (props: { appState: AppState }) => {
     />
   );
 };
+
+preview(PickRestaurant, {
+  example: {
+    appState: new AppState(RESTAURANT_LIST),
+  },
+});
 
 export const PickRestaurantStateless = (props: {
   search: string;
