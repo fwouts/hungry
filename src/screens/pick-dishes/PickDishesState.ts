@@ -1,20 +1,17 @@
-import { atom } from "jotai";
+import { Atom, atom } from "jotai";
 import { AppState } from "../../AppState";
+import { Restaurant } from "../../models";
 
 export class PickDishesState {
-  readonly restaurantAtom = atom((get) => {
-    const match = get(this.app.restaurantList).find(
-      (restaurant) => restaurant.id === this.restaurantId
-    );
-    if (!match) {
-      throw new Error(`No restaurant with ID: ${this.restaurantId}`);
-    }
-    return match;
-  });
+  readonly restaurantAtom: Atom<Restaurant | null>;
   readonly pickedItemsAtom = atom<Record<string, number>>({});
 
-  constructor(
-    private readonly app: AppState,
-    private readonly restaurantId: string
-  ) {}
+  constructor(app: AppState, restaurantId: string) {
+    this.restaurantAtom = atom((get) => {
+      const match = get(app.restaurantList).find(
+        (restaurant) => restaurant.id === restaurantId
+      );
+      return match || null;
+    });
+  }
 }

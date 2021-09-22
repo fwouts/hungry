@@ -1,14 +1,16 @@
-import { atom } from "jotai";
-import { AppState } from "../../AppState";
+import { Atom, atom } from "jotai";
+import { AppState, Restaurant } from "../../AppState";
 
 export class PickRestaurantState {
   readonly searchAtom = atom("");
-  readonly filteredRestaurantListAtom = atom((get) => {
-    const search = get(this.searchAtom).toLowerCase().trim();
-    return get(this.app.restaurantList).filter((restaurant) =>
-      restaurant.name.toLowerCase().includes(search)
-    );
-  });
+  readonly filteredRestaurantListAtom: Atom<Restaurant[]>;
 
-  constructor(private readonly app: AppState) {}
+  constructor(app: AppState) {
+    this.filteredRestaurantListAtom = atom((get) => {
+      const search = get(this.searchAtom).toLowerCase().trim();
+      return get(app.restaurantList).filter((restaurant) =>
+        restaurant.name.toLowerCase().includes(search)
+      );
+    });
+  }
 }

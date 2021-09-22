@@ -1,4 +1,5 @@
-import { MenuItem, Restaurant } from "./models";
+import { Restaurant } from "./AppState";
+import { MenuItem } from "./design/MenuItemPicker/MenuItem";
 
 const MENU_ITEMS: MenuItem[] = [
   {

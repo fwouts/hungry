@@ -1,11 +1,9 @@
-import { ChevronLeftIcon } from "@heroicons/react/outline";
 import produce from "immer";
 import { useAtom } from "jotai";
 import React, { useCallback, useMemo } from "react";
-import { Link } from "react-router-dom";
-import { AppState } from "../../AppState";
-import { UpdateItemFn } from "./components/MenuItemPicker";
-import { MenuPicker } from "./components/MenuPicker";
+import { AppState, Restaurant } from "../../AppState";
+import { HeroHeader } from "../../design/HeroHeader/HeroHeader";
+import { MenuPicker } from "../../design/MenuPicker/MenuPicker";
 import { PickDishesState } from "./PickDishesState";
 
 export const PickDishes = (props: {
@@ -18,8 +16,8 @@ export const PickDishes = (props: {
   );
   const [restaurant] = useAtom(state.restaurantAtom);
   const [pickedItems, setPickedItems] = useAtom(state.pickedItemsAtom);
-  const updateItem = useCallback<UpdateItemFn>(
-    (itemId, count) => {
+  const updateItem = useCallback(
+    (itemId: string, count: number) => {
       setPickedItems(
         produce((draft) => {
           if (count > 0) {
@@ -33,23 +31,36 @@ export const PickDishes = (props: {
     [pickedItems, setPickedItems]
   );
 
+  if (!restaurant) {
+    return <>No restaurant with ID: {props.restaurantId}</>;
+  }
+
+  return (
+    <PickDishesStateless
+      {...{
+        restaurant,
+        pickedItems,
+        updateItem,
+      }}
+    />
+  );
+};
+
+export const PickDishesStateless = (props: {
+  restaurant: Restaurant;
+  pickedItems: Record<string, number>;
+  updateItem(itemId: string, count: number): void;
+}) => {
   return (
     <>
-      <div
-        className="text-white text-lg pt-4 pb-32 flex flex-row items-center bg-no-repeat bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(hsla(0, 0%, 40%, 0.2), hsla(0, 0%, 0%, 0.4)), url('${restaurant.photoUrl}')`,
-        }}
-      >
-        <Link to="/" className="w-10 px-2">
-          <ChevronLeftIcon />
-        </Link>
-        <h1>{restaurant.name}</h1>
-      </div>
+      <HeroHeader
+        title={props.restaurant.name}
+        photoUrl={props.restaurant.photoUrl}
+      />
       <MenuPicker
-        menu={restaurant.menu}
-        pickedItems={pickedItems}
-        updateItem={updateItem}
+        items={props.restaurant.menu}
+        pickedItems={props.pickedItems}
+        onUpdateItem={props.updateItem}
       />
     </>
   );

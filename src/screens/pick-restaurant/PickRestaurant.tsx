@@ -1,30 +1,52 @@
 import { useAtom } from "jotai";
 import React, { useMemo } from "react";
-import { AppState } from "../../AppState";
-import { NoRestaurantsFound } from "./components/NoRestaurantsFound";
-import { RestaurantList } from "./components/RestaurantList";
-import { RestaurantSearchBar } from "./components/SearchBar";
+import { AppState, Restaurant } from "../../AppState";
+import { NoMatch } from "../../design/NoMatch/NoMatch";
+import { RestaurantList } from "../../design/RestaurantList/RestaurantList";
+import { SearchHeader } from "../../design/SearchHeader/SearchHeader";
 import { PickRestaurantState } from "./PickRestaurantState";
 
 export const PickRestaurant = (props: { appState: AppState }) => {
-  const state = useMemo(
-    () => new PickRestaurantState(props.appState),
-    [props.appState]
-  );
+  const state = useMemo(() => new PickRestaurantState(props.appState), [
+    props.appState,
+  ]);
   const [restaurantList] = useAtom(state.filteredRestaurantListAtom);
   const [search, setSearch] = useAtom(state.searchAtom);
 
   return (
+    <PickRestaurantStateless
+      {...{
+        search,
+        setSearch,
+        restaurantList,
+      }}
+    />
+  );
+};
+
+export const PickRestaurantStateless = (props: {
+  search: string;
+  restaurantList: Restaurant[];
+  setSearch(search: string): void;
+}) => {
+  return (
     <>
-      <h1 className="bg-red-600 text-white text-lg font-extralight pt-3 px-5">
-        Pick a restaurant
-      </h1>
-      <div className="p-2 bg-gradient-to-b from-red-600 to-red-700">
-        <RestaurantSearchBar search={search} updateSearch={setSearch} />
-      </div>
+      <SearchHeader search={props.search} updateSearch={props.setSearch} />
       <RestaurantList
-        restaurantList={restaurantList}
-        empty={<NoRestaurantsFound searchTerm={search} />}
+        restaurantList={props.restaurantList}
+        empty={
+          <NoMatch
+            message={
+              props.search ? (
+                <>
+                  No restaurants match <b>"{props.search}"</b>
+                </>
+              ) : (
+                <>No restaurants are available.</>
+              )
+            }
+          />
+        }
       />
     </>
   );

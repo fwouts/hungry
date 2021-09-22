@@ -10,7 +10,7 @@ module.exports = {
       mobile: playwright.devices["Pixel 2"],
     },
   }),
-  filePathPattern: "**/*.screenshot.@(js|jsx|tsx)",
+  filePathPattern: "**/*.stories.@(js|jsx|tsx)",
   wrapper: {
     path: "__reactpreview__/Wrapper.tsx",
     componentName: "Wrapper",
