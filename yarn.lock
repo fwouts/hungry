@@ -1430,10 +1430,10 @@
     "@reactpreview/core" "0.6.1"
     commander "^8.2.0"
 
-"@reactpreview/config@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@reactpreview/config/-/config-0.3.1.tgz#54e4aaa5281738fd05ef51224f134ebab767d29f"
-  integrity sha512-r7KEMFnTf5wXc8WZXEo9P3ZSwN5nsI/8k8hrwNOiTFTXLrXjDPVKKU9v7dSgJ51fGGwYmLeSFHMNfoNWMatPeQ==
+"@reactpreview/config@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@reactpreview/config/-/config-0.3.3.tgz#2b1c75b01273b648080479ad290ee683c4734603"
+  integrity sha512-eqVWUl/IDWOR/pO+tfFkP/1Sp1Wf49JS/swzV+FBU71dRe9fiEnY8x26DdV+PwJj9n6WRjWhnzGzXARmVTd4FQ==
 
 "@reactpreview/core@0.6.1":
   version "0.6.1"

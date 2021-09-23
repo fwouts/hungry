@@ -1,6 +1,5 @@
 import { Atom, atom } from "jotai";
-import { AppState } from "../../AppState";
-import { Restaurant } from "../../models";
+import { AppState, Restaurant } from "../../AppState";
 
 export class PickDishesState {
   readonly restaurantAtom: Atom<Restaurant | null>;
