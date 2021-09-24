@@ -37,7 +37,7 @@
     "storybook-react-router": "^1.0.8",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.3.2",
-    "vite": "2.6.0-beta.1",
+    "vite": "2.6.0-beta.2",
     "vite-plugin-svgr": "^0.4.0",
     "viteshot": "^0.3.0"
   }

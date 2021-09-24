@@ -10662,10 +10662,10 @@ vite@2.6.0-beta.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vite@2.6.0-beta.1:
-  version "2.6.0-beta.1"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.6.0-beta.1.tgz#c7f1f7a610b1a5c3e6142b00bc14878c6059fa16"
-  integrity sha512-6xmIFj5Pn9T1bAF41HSycYmvaTlaA5b0atxihx7uqJyC8ZAsPX5fp1e6yHwSjTXi740nIjprtQwzifla98dFng==
+vite@2.6.0-beta.2:
+  version "2.6.0-beta.2"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.6.0-beta.2.tgz#951342e774348746e982f92a788d6e894c4063b2"
+  integrity sha512-44jkr/QQ1dKzYhfieOxTql3QO/maZKUplrbnFUrSqU4wUE/kO4Sz0k8xH0pcf3r6u66rWe446lyq2MCyQpwoDg==
   dependencies:
     esbuild "^0.13.1"
     postcss "^8.3.7"
