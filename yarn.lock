@@ -1431,7 +1431,7 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
-"@reactpreview/cli@^0.6.0":
+"@reactpreview/cli@^0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@reactpreview/cli/-/cli-0.6.1.tgz#e52469d000d60cf36f3a35f74f3237cecf1c10d3"
   integrity sha512-y6k0s9NW55ZUlEjBP6AXmGYyfEXVfpVX4UGWZXiDOJV9XH59+gZVcDhxicis4WRdo682xr27IXOd/IaNyacXjg==
