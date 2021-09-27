@@ -35,6 +35,7 @@
     "eslint-config-next": "11.1.2",
     "playwright": "^1.14.1",
     "typescript": "4.4.3",
+    "url-loader": "^4.1.1",
     "viteshot": "^0.3.1"
   }
 }

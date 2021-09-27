@@ -2,6 +2,7 @@ import React from "react";
 import { AppState, AppStateContext } from "../AppState";
 import { RESTAURANT_LIST } from "../data";
 import { ScreenContainer } from "../screens/ScreenContainer";
+import "../styles/globals.css";
 
 const state = new AppState(RESTAURANT_LIST);
 
