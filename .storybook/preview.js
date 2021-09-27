@@ -1,5 +1,4 @@
-import StoryRouter from "storybook-react-router";
-import "../src/index.css";
+import "../styles/globals.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -10,5 +9,3 @@ export const parameters = {
     },
   },
 };
-
-export const decorators = [StoryRouter()];
