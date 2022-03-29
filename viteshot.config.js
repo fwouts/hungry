@@ -12,7 +12,7 @@ module.exports = {
   }),
   filePathPattern: "**/*.stories.@(js|jsx|tsx)",
   wrapper: {
-    path: "__reactpreview__/Wrapper.tsx",
+    path: "__previewjs__/Wrapper.tsx",
     componentName: "Wrapper",
   },
 };

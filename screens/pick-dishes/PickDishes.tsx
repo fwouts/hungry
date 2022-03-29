@@ -1,4 +1,4 @@
-import { preview } from "@reactpreview/config";
+import { setupPreviews } from "@previewjs/plugin-react/setup";
 import produce from "immer";
 import { useAtom } from "jotai";
 import React, { useCallback, useMemo } from "react";
@@ -48,7 +48,7 @@ export const PickDishes = (props: {
   );
 };
 
-preview(PickDishes, {
+setupPreviews(PickDishes, {
   example: {
     appState: new AppState(RESTAURANT_LIST),
     restaurantId: RESTAURANT_LIST[0].id,

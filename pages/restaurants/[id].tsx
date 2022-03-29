@@ -1,4 +1,4 @@
-import { preview } from "@reactpreview/config";
+import { setupPreviews } from "@previewjs/plugin-react/setup";
 import type { GetServerSideProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import { useContext } from "react";
@@ -24,7 +24,7 @@ const RestaurantPage: NextPage<{
   return <PickDishes appState={state} restaurantId={restaurantId} />;
 };
 
-preview(RestaurantPage, {
+setupPreviews(RestaurantPage, {
   default: {
     restaurantId: RESTAURANT_LIST[0].id,
   },

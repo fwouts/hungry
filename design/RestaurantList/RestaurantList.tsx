@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/outline";
-import { preview } from "@reactpreview/config";
+import { setupPreviews } from "@previewjs/plugin-react/setup";
 import Link from "next/link";
 import React from "react";
 import { RESTAURANT_LIST } from "../../data";
@@ -21,7 +21,7 @@ export const RestaurantList = (props: {
   );
 };
 
-preview(RestaurantList, {
+setupPreviews(RestaurantList, {
   example: {
     restaurantList: RESTAURANT_LIST,
   },

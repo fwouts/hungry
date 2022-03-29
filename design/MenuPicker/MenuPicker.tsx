@@ -1,4 +1,4 @@
-import { preview } from "@reactpreview/config";
+import { setupPreviews } from "@previewjs/plugin-react/setup";
 import React from "react";
 import { RESTAURANT_LIST } from "../../data";
 import { MenuItem } from "../MenuItemPicker/MenuItem";
@@ -29,7 +29,7 @@ export const MenuPicker = ({
   );
 };
 
-preview(MenuPicker, {
+setupPreviews(MenuPicker, {
   example: {
     items: RESTAURANT_LIST[0].menu,
     pickedItems: {},

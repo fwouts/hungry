@@ -1,4 +1,4 @@
-import { preview } from "@reactpreview/config";
+import { setupPreviews } from "@previewjs/plugin-react/setup";
 import { useAtom } from "jotai";
 import React, { useMemo } from "react";
 import { AppState, Restaurant } from "../../AppState";
@@ -9,10 +9,9 @@ import { SearchHeader } from "../../design/SearchHeader/SearchHeader";
 import { PickRestaurantState } from "./PickRestaurantState";
 
 export const PickRestaurant = (props: { appState: AppState }) => {
-  const state = useMemo(
-    () => new PickRestaurantState(props.appState),
-    [props.appState]
-  );
+  const state = useMemo(() => new PickRestaurantState(props.appState), [
+    props.appState,
+  ]);
   const [restaurantList] = useAtom(state.filteredRestaurantListAtom);
   const [search, setSearch] = useAtom(state.searchAtom);
 
@@ -27,7 +26,7 @@ export const PickRestaurant = (props: { appState: AppState }) => {
   );
 };
 
-preview(PickRestaurant, {
+setupPreviews(PickRestaurant, {
   example: {
     appState: new AppState(RESTAURANT_LIST),
   },

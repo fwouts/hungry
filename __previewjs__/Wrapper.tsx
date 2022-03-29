@@ -10,7 +10,7 @@ export const Wrapper: React.FC = ({ children }) => {
   return (
     <ScreenContainer>
       <AppStateContext.Provider value={state}>
-        {children}
+        <div>{children}</div>
       </AppStateContext.Provider>
     </ScreenContainer>
   );

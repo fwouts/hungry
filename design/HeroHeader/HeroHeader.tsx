@@ -1,5 +1,5 @@
 import { ChevronLeftIcon } from "@heroicons/react/outline";
-import { preview } from "@reactpreview/config";
+import { setupPreviews } from "@previewjs/plugin-react/setup";
 import Link from "next/link";
 import React from "react";
 import { RESTAURANT_LIST } from "../../data";
@@ -27,7 +27,9 @@ export const HeroHeader = (props: HeroHeaderProps) => {
   );
 };
 
-preview(HeroHeader, {
+export default HeroHeader;
+
+setupPreviews(HeroHeader, {
   default: {
     title: "Restaurant name",
     photoUrl: RESTAURANT_LIST[0].photoUrl,

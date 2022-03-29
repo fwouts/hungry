@@ -1,4 +1,4 @@
-import { preview } from "@reactpreview/config";
+import { setupPreviews } from "@previewjs/plugin-react/setup";
 import React from "react";
 import { getMenuItemData } from "../../data";
 import { Counter } from "../Counter/Counter";
@@ -44,14 +44,18 @@ export const MenuItemPicker = ({
   );
 };
 
-preview(MenuItemPicker, {
-  base: {
+setupPreviews(MenuItemPicker, () => {
+  const base = {
     menuItem: getMenuItemData("JD4"),
-  },
-  example: {
-    count: 0,
-  },
-  picked: {
-    count: 100,
-  },
+  };
+  return {
+    example: {
+      ...base,
+      count: 0,
+    },
+    picked: {
+      ...base,
+      count: 100,
+    },
+  };
 });
