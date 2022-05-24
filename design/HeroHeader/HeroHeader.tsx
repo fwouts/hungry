@@ -1,7 +1,6 @@
 import { ChevronLeftIcon } from "@heroicons/react/outline";
 import { setupPreviews } from "@previewjs/plugin-react/setup";
 import Link from "next/link";
-import React from "react";
 import { RESTAURANT_LIST } from "../../data";
 
 export interface HeroHeaderProps {
@@ -12,17 +11,19 @@ export interface HeroHeaderProps {
 export const HeroHeader = (props: HeroHeaderProps) => {
   return (
     <div
-      className="text-white text-lg pt-4 pb-32 flex flex-row items-center bg-no-repeat bg-cover bg-center"
+      className="text-white text-xl font-semibold pb-32 bg-no-repeat bg-cover bg-center"
       style={{
-        backgroundImage: `linear-gradient(hsla(0, 0%, 40%, 0.2), hsla(0, 0%, 0%, 0.4)), url('${props.photoUrl}')`,
+        backgroundImage: `url('${props.photoUrl}')`,
       }}
     >
-      <Link href="/">
-        <a className="w-10 px-2">
-          <ChevronLeftIcon />
-        </a>
-      </Link>
-      <h1>{props.title}</h1>
+      <div className="bg-gray-800 bg-opacity-60 flex flex-row items-center py-4">
+        <Link href="/">
+          <a className="w-10 mx-3 p-2 text-sm bg-gray-200 text-black rounded-full hover:bg-white">
+            <ChevronLeftIcon />
+          </a>
+        </Link>
+        <h1>{props.title}</h1>
+      </div>
     </div>
   );
 };
