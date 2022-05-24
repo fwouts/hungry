@@ -19,6 +19,7 @@
     "immer": "^9.0.14",
     "jotai": "^1.6.7",
     "next": "12.1.6",
+    "nextjs-progressbar": "^0.0.14",
     "postcss": "^8.4.14",
     "react": "18.1.0",
     "react-dom": "18.1.0",
