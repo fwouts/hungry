@@ -1,7 +1,7 @@
 import { setupPreviews } from "@previewjs/plugin-react/setup";
 import { useAtom } from "jotai";
-import React, { useMemo } from "react";
-import { AppState, Restaurant } from "../../AppState";
+import { useMemo } from "react";
+import { AppState } from "../../AppState";
 import { RESTAURANT_LIST } from "../../data";
 import { NoMatch } from "../../design/NoMatch/NoMatch";
 import { RestaurantList } from "../../design/RestaurantList/RestaurantList";
@@ -16,38 +16,16 @@ export const PickRestaurant = (props: { appState: AppState }) => {
   const [search, setSearch] = useAtom(state.searchAtom);
 
   return (
-    <PickRestaurantStateless
-      {...{
-        search,
-        setSearch,
-        restaurantList,
-      }}
-    />
-  );
-};
-
-setupPreviews(PickRestaurant, {
-  example: {
-    appState: new AppState(RESTAURANT_LIST),
-  },
-});
-
-export const PickRestaurantStateless = (props: {
-  search: string;
-  restaurantList: Restaurant[];
-  setSearch(search: string): void;
-}) => {
-  return (
     <>
-      <SearchHeader search={props.search} updateSearch={props.setSearch} />
+      <SearchHeader search={search} updateSearch={setSearch} />
       <RestaurantList
-        restaurantList={props.restaurantList}
+        restaurantList={restaurantList}
         empty={
           <NoMatch
             message={
-              props.search ? (
+              search ? (
                 <>
-                  No restaurants match <b>&quot;{props.search}&quot;</b>
+                  No restaurants match <b>&quot;{search}&quot;</b>
                 </>
               ) : (
                 <>No restaurants are available.</>
@@ -59,3 +37,9 @@ export const PickRestaurantStateless = (props: {
     </>
   );
 };
+
+setupPreviews(PickRestaurant, {
+  example: {
+    appState: new AppState(RESTAURANT_LIST),
+  },
+});

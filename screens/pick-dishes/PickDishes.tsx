@@ -1,8 +1,8 @@
 import { setupPreviews } from "@previewjs/plugin-react/setup";
 import produce from "immer";
 import { useAtom } from "jotai";
-import React, { useCallback, useMemo } from "react";
-import { AppState, Restaurant } from "../../AppState";
+import { useCallback, useMemo } from "react";
+import { AppState } from "../../AppState";
 import { RESTAURANT_LIST } from "../../data";
 import { HeroHeader } from "../../design/HeroHeader/HeroHeader";
 import { MenuPicker } from "../../design/MenuPicker/MenuPicker";
@@ -38,13 +38,14 @@ export const PickDishes = (props: {
   }
 
   return (
-    <PickDishesStateless
-      {...{
-        restaurant,
-        pickedItems,
-        updateItem,
-      }}
-    />
+    <>
+      <HeroHeader title={restaurant.name} photoUrl={restaurant.photoUrl} />
+      <MenuPicker
+        items={restaurant.menu}
+        pickedItems={pickedItems}
+        onUpdateItem={updateItem}
+      />
+    </>
   );
 };
 
@@ -54,23 +55,3 @@ setupPreviews(PickDishes, {
     restaurantId: RESTAURANT_LIST[0].id,
   },
 });
-
-export const PickDishesStateless = (props: {
-  restaurant: Restaurant;
-  pickedItems: Record<string, number>;
-  updateItem(itemId: string, count: number): void;
-}) => {
-  return (
-    <>
-      <HeroHeader
-        title={props.restaurant.name}
-        photoUrl={props.restaurant.photoUrl}
-      />
-      <MenuPicker
-        items={props.restaurant.menu}
-        pickedItems={props.pickedItems}
-        onUpdateItem={props.updateItem}
-      />
-    </>
-  );
-};
