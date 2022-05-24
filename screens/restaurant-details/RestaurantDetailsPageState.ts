@@ -1,17 +1,24 @@
-import { Atom, atom } from "jotai";
+import { makeAutoObservable } from "mobx";
 import { AppState } from "../../AppState";
-import { RestaurantData } from "../../models";
-
 export class RestaurantDetailsPageState {
-  readonly restaurantAtom: Atom<RestaurantData | null>;
-  readonly pickedItemsAtom = atom<Record<string, number>>({});
+  pickedItems: Record<string, number> = {};
 
-  constructor(app: AppState, restaurantId: string) {
-    this.restaurantAtom = atom((get) => {
-      const match = get(app.restaurantList).find(
-        (restaurant) => restaurant.id === restaurantId
-      );
-      return match || null;
-    });
+  constructor(
+    private readonly app: AppState,
+    private readonly restaurantId: string
+  ) {
+    makeAutoObservable(this);
+  }
+
+  get restaurant() {
+    return this.app.restaurantList.find((r) => r.id === this.restaurantId);
+  }
+
+  updateItemCount(itemId: string, count: number) {
+    if (count > 0) {
+      this.pickedItems[itemId] = count;
+    } else {
+      delete this.pickedItems[itemId];
+    }
   }
 }

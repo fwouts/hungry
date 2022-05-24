@@ -1,17 +1,21 @@
-import { Atom, atom } from "jotai";
+import { makeAutoObservable } from "mobx";
 import { AppState } from "../../AppState";
-import { RestaurantData } from "../../models";
 
 export class RestaurantListPageState {
-  readonly searchAtom = atom("");
-  readonly filteredRestaurantListAtom: Atom<RestaurantData[]>;
+  search = "";
 
-  constructor(app: AppState) {
-    this.filteredRestaurantListAtom = atom((get) => {
-      const search = get(this.searchAtom).toLowerCase().trim();
-      return get(app.restaurantList).filter((restaurant) =>
-        restaurant.name.toLowerCase().includes(search)
-      );
-    });
+  constructor(private readonly app: AppState) {
+    makeAutoObservable(this);
+  }
+
+  setSearch(search: string) {
+    this.search = search;
+  }
+
+  get filteredRestaurantList() {
+    const search = this.search.toLowerCase().trim();
+    return this.app.restaurantList.filter((restaurant) =>
+      restaurant.name.toLowerCase().includes(search)
+    );
   }
 }
