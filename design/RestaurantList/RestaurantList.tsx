@@ -1,4 +1,5 @@
-import { ChevronRightIcon } from "@heroicons/react/outline";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { setupPreviews } from "@previewjs/plugin-react/setup";
 import Link from "next/link";
 import React from "react";
@@ -38,7 +39,7 @@ const RestaurantListItem = ({ restaurant }: { restaurant: RestaurantItem }) => {
           {restaurant.name}
         </div>
         <div className="w-6">
-          <ChevronRightIcon />
+          <FontAwesomeIcon icon={faChevronRight} />
         </div>
       </a>
     </Link>

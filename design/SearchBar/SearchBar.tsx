@@ -1,4 +1,5 @@
-import { SearchIcon } from "@heroicons/react/outline";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 export const SearchBar = (props: {
@@ -20,7 +21,7 @@ export const SearchBar = (props: {
         onChange={handleSearchInputChange}
       />
       <div className="text-red-700 rounded-full p-2 w-9 h-9">
-        <SearchIcon />
+        <FontAwesomeIcon icon={faSearch} />
       </div>
     </div>
   );
