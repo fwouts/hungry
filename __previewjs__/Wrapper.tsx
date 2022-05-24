@@ -6,7 +6,9 @@ import "../styles/globals.css";
 
 const state = new AppState(RESTAURANT_LIST);
 
-export const Wrapper: React.FC = ({ children }) => {
+export const Wrapper: React.FC<{
+  children: React.ReactNode;
+}> = ({ children }) => {
   return (
     <ScreenContainer>
       <AppStateContext.Provider value={state}>
