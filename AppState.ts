@@ -1,20 +1,13 @@
 import { Atom, atom } from "jotai";
 import React from "react";
-import { MenuItem } from "./design/MenuItemPicker/MenuItem";
+import { RestaurantData } from "./models";
 
 export class AppState {
-  readonly restaurantList: Atom<Restaurant[]>;
+  readonly restaurantList: Atom<RestaurantData[]>;
 
-  constructor(restaurantList: Restaurant[]) {
+  constructor(restaurantList: RestaurantData[]) {
     this.restaurantList = atom(restaurantList);
   }
 }
 
 export const AppStateContext = React.createContext<AppState>(null! as AppState);
-
-export interface Restaurant {
-  id: string;
-  name: string;
-  photoUrl: string;
-  menu: MenuItem[];
-}

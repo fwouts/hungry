@@ -1,14 +1,14 @@
 import { setupPreviews } from "@previewjs/plugin-react/setup";
 import { getMenuItemData } from "../../data";
+import { MenuItemData } from "../../models";
 import { Counter } from "../Counter/Counter";
-import { MenuItem } from "./MenuItem";
 
 export const MenuItemPicker = ({
   menuItem,
   count,
   onUpdate,
 }: {
-  menuItem: MenuItem;
+  menuItem: MenuItemData;
   count: number;
   onUpdate(count: number): void;
 }) => {

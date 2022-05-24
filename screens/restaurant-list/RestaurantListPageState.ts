@@ -1,9 +1,10 @@
 import { Atom, atom } from "jotai";
-import { AppState, Restaurant } from "../../AppState";
+import { AppState } from "../../AppState";
+import { RestaurantData } from "../../models";
 
 export class RestaurantListPageState {
   readonly searchAtom = atom("");
-  readonly filteredRestaurantListAtom: Atom<Restaurant[]>;
+  readonly filteredRestaurantListAtom: Atom<RestaurantData[]>;
 
   constructor(app: AppState) {
     this.filteredRestaurantListAtom = atom((get) => {

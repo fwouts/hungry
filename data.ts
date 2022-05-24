@@ -1,7 +1,6 @@
-import { Restaurant } from "./AppState";
-import { MenuItem } from "./design/MenuItemPicker/MenuItem";
+import { MenuItemData, RestaurantData } from "./models";
 
-const MENU_ITEMS: MenuItem[] = [
+const MENU_ITEMS: MenuItemData[] = [
   {
     id: "D1",
     name: "Redbean mooncake",
@@ -220,11 +219,11 @@ const MENU_ITEMS: MenuItem[] = [
   },
 ];
 
-export function getMenuItemData(id: string): MenuItem {
+export function getMenuItemData(id: string): MenuItemData {
   return MENU_ITEMS.find((m) => m.id === id)!;
 }
 
-export const RESTAURANT_LIST: Restaurant[] = [
+export const RESTAURANT_LIST: RestaurantData[] = [
   {
     id: "1",
     name: "A Taste of China",

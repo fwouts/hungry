@@ -1,8 +1,9 @@
 import { Atom, atom } from "jotai";
-import { AppState, Restaurant } from "../../AppState";
+import { AppState } from "../../AppState";
+import { RestaurantData } from "../../models";
 
 export class RestaurantDetailsPageState {
-  readonly restaurantAtom: Atom<Restaurant | null>;
+  readonly restaurantAtom: Atom<RestaurantData | null>;
   readonly pickedItemsAtom = atom<Record<string, number>>({});
 
   constructor(app: AppState, restaurantId: string) {

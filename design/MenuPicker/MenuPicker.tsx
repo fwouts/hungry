@@ -1,6 +1,6 @@
 import { setupPreviews } from "@previewjs/plugin-react/setup";
 import { RESTAURANT_LIST } from "../../data";
-import { MenuItem } from "../MenuItemPicker/MenuItem";
+import { MenuItemData } from "../../models";
 import { MenuItemPicker } from "../MenuItemPicker/MenuItemPicker";
 
 export const MenuPicker = ({
@@ -8,7 +8,7 @@ export const MenuPicker = ({
   pickedItems,
   onUpdateItem,
 }: {
-  items: MenuItem[];
+  items: MenuItemData[];
   pickedItems: Record<string, number>;
   onUpdateItem(itemId: string, count: number): void;
 }) => {
