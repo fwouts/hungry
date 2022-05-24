@@ -1,4 +1,5 @@
-import { ChevronLeftIcon } from "@heroicons/react/outline";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { setupPreviews } from "@previewjs/plugin-react/setup";
 import Link from "next/link";
 import { RESTAURANT_LIST } from "../../data";
@@ -19,7 +20,7 @@ export const HeroHeader = (props: HeroHeaderProps) => {
       <div className="bg-gray-800 bg-opacity-60 flex flex-row items-center py-4">
         <Link href="/">
           <a className="w-10 mx-3 p-2 text-sm bg-gray-200 text-black rounded-full hover:bg-white">
-            <ChevronLeftIcon />
+            <FontAwesomeIcon icon={faChevronLeft} />
           </a>
         </Link>
         <h1>{props.title}</h1>
