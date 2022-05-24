@@ -1,7 +1,7 @@
 import { Atom, atom } from "jotai";
 import { AppState, Restaurant } from "../../AppState";
 
-export class PickDishesState {
+export class RestaurantDetailsPageState {
   readonly restaurantAtom: Atom<Restaurant | null>;
   readonly pickedItemsAtom = atom<Record<string, number>>({});
 

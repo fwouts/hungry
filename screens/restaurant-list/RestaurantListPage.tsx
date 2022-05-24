@@ -6,10 +6,10 @@ import { RESTAURANT_LIST } from "../../data";
 import { NoMatch } from "../../design/NoMatch/NoMatch";
 import { RestaurantList } from "../../design/RestaurantList/RestaurantList";
 import { SearchHeader } from "../../design/SearchHeader/SearchHeader";
-import { PickRestaurantState } from "./PickRestaurantState";
+import { RestaurantListPageState } from "./RestaurantListPageState";
 
-export const PickRestaurant = (props: { appState: AppState }) => {
-  const state = useMemo(() => new PickRestaurantState(props.appState), [
+export const RestaurantListPage = (props: { appState: AppState }) => {
+  const state = useMemo(() => new RestaurantListPageState(props.appState), [
     props.appState,
   ]);
   const [restaurantList] = useAtom(state.filteredRestaurantListAtom);
@@ -38,7 +38,7 @@ export const PickRestaurant = (props: { appState: AppState }) => {
   );
 };
 
-setupPreviews(PickRestaurant, {
+setupPreviews(RestaurantListPage, {
   example: {
     appState: new AppState(RESTAURANT_LIST),
   },

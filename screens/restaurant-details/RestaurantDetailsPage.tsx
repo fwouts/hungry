@@ -6,14 +6,14 @@ import { AppState } from "../../AppState";
 import { RESTAURANT_LIST } from "../../data";
 import { HeroHeader } from "../../design/HeroHeader/HeroHeader";
 import { MenuPicker } from "../../design/MenuPicker/MenuPicker";
-import { PickDishesState } from "./PickDishesState";
+import { RestaurantDetailsPageState } from "./RestaurantDetailsPageState";
 
-export const PickDishes = (props: {
+export const RestaurantDetailsPage = (props: {
   appState: AppState;
   restaurantId: string;
 }) => {
   const state = useMemo(
-    () => new PickDishesState(props.appState, props.restaurantId),
+    () => new RestaurantDetailsPageState(props.appState, props.restaurantId),
     [props.appState, props.restaurantId]
   );
   const [restaurant] = useAtom(state.restaurantAtom);
@@ -49,7 +49,7 @@ export const PickDishes = (props: {
   );
 };
 
-setupPreviews(PickDishes, {
+setupPreviews(RestaurantDetailsPage, {
   example: {
     appState: new AppState(RESTAURANT_LIST),
     restaurantId: RESTAURANT_LIST[0].id,

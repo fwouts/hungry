@@ -1,7 +1,7 @@
 import { Atom, atom } from "jotai";
 import { AppState, Restaurant } from "../../AppState";
 
-export class PickRestaurantState {
+export class RestaurantListPageState {
   readonly searchAtom = atom("");
   readonly filteredRestaurantListAtom: Atom<Restaurant[]>;
 

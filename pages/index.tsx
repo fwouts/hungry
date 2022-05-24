@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import { useContext } from "react";
 import { AppStateContext } from "../AppState";
-import { PickRestaurant } from "../screens/pick-restaurant/PickRestaurant";
+import { RestaurantListPage } from "../screens/restaurant-list";
 
 const Home: NextPage = () => {
   const state = useContext(AppStateContext);
-  return <PickRestaurant appState={state} />;
+  return <RestaurantListPage appState={state} />;
 };
 
 export default Home;

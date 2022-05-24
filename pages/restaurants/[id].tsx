@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useContext } from "react";
 import { AppStateContext } from "../../AppState";
 import { RESTAURANT_LIST } from "../../data";
-import { PickDishes } from "../../screens/pick-dishes/PickDishes";
+import { RestaurantDetailsPage } from "../../screens/restaurant-details";
 
 const RestaurantPage: NextPage<{
   restaurantId: string;
@@ -21,7 +21,7 @@ const RestaurantPage: NextPage<{
   } else {
     ({ restaurantId } = props);
   }
-  return <PickDishes appState={state} restaurantId={restaurantId} />;
+  return <RestaurantDetailsPage appState={state} restaurantId={restaurantId} />;
 };
 
 setupPreviews(RestaurantPage, {
