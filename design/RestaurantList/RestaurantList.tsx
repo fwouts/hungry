@@ -10,13 +10,11 @@ export const RestaurantList = (props: {
   restaurantList: RestaurantItem[];
 }) => {
   return (
-    <div className="bg-red-100 p-2">
-      <div className="bg-white rounded-lg overflow-hidden">
-        {props.restaurantList.length === 0 && props.empty}
-        {props.restaurantList.map((restaurant) => (
-          <RestaurantListItem key={restaurant.id} restaurant={restaurant} />
-        ))}
-      </div>
+    <div className="bg-white overflow-hidden">
+      {props.restaurantList.length === 0 && props.empty}
+      {props.restaurantList.map((restaurant) => (
+        <RestaurantListItem key={restaurant.id} restaurant={restaurant} />
+      ))}
     </div>
   );
 };
@@ -31,12 +29,12 @@ const RestaurantListItem = ({ restaurant }: { restaurant: RestaurantItem }) => {
   return (
     <Link href={`/restaurants/${restaurant.id}`}>
       <a
-        className="pt-28 pb-6 px-3 cursor-pointer text-white text-xl filter hover:brightness-150 flex flex-row justify-between bg-no-repeat bg-cover bg-center"
+        className="pt-28 pb-6 px-3 cursor-pointer text-white text-xl filter hover:brightness-125 flex flex-row justify-between bg-no-repeat bg-cover bg-center group"
         style={{
-          backgroundImage: `linear-gradient(hsla(0, 0%, 40%, 0.2), hsla(0, 0%, 0%, 0.4)), url('${restaurant.photoUrl}')`,
+          backgroundImage: `linear-gradient(hsla(0, 0%, 40%, 0.2), hsla(0, 0%, 0%, 0.2)), url('${restaurant.photoUrl}')`,
         }}
       >
-        <div className="rounded-md bg-gray-600 bg-opacity-60 p-2">
+        <div className="rounded-md bg-gray-600 bg-opacity-60 p-2 group-hover:bg-white group-hover:bg-opacity-80 group-hover:text-black">
           {restaurant.name}
         </div>
         <div className="w-6">

@@ -1,5 +1,4 @@
 import { setupPreviews } from "@previewjs/plugin-react/setup";
-import React from "react";
 import { getMenuItemData } from "../../data";
 import { Counter } from "../Counter/Counter";
 import { MenuItem } from "./MenuItem";
@@ -16,7 +15,7 @@ export const MenuItemPicker = ({
   const onIncreaseCount = () => onUpdate(count + 1);
   const onDecreaseCount = () => onUpdate(count - 1);
   return (
-    <div className="py-2 px-3 flex flex-row justify-between items-center select-none">
+    <div className="py-2 px-3 flex flex-row justify-between items-center select-none bg-white odd:bg-gray-50">
       <img
         className="h-24 w-24 cursor-pointer rounded-md object-cover flex-shrink-0"
         onClick={onIncreaseCount}
