@@ -13,6 +13,7 @@ export interface MenuItem {
   id: string;
   name: string;
   photoUrl: string;
+  unavailable?: boolean;
 }
 
 export default async function handler(
@@ -26,5 +27,8 @@ export default async function handler(
   if (!restaurant) {
     return res.status(404).end();
   }
-  res.status(200).json(restaurant);
+  res.status(200).json({
+    ...restaurant,
+    menu: restaurant.menu.filter((i) => !i.unavailable),
+  });
 }

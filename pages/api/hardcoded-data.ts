@@ -60,6 +60,7 @@ const MENU_ITEMS: MenuItem[] = [
     name: "Steamed mushroom dumplings",
     photoUrl:
       "https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80",
+    unavailable: true,
   },
   {
     id: "M1",
