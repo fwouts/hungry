@@ -1,5 +1,9 @@
 import { ComponentStory } from "@storybook/react";
-import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
+import {
+  MENU_ITEM_DUMPLINGS,
+  MENU_ITEM_KUNG_PAO_CHICKEN,
+  MENU_ITEM_STRAWBERRY_CUPCAKES,
+} from "../testing/fixtures";
 import { RestaurantMenu } from "./RestaurantMenu";
 
 export default {
@@ -13,15 +17,23 @@ const Template: ComponentStory<typeof RestaurantMenu> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  items: RESTAURANT_LIST[0].menu,
+  items: [
+    MENU_ITEM_DUMPLINGS,
+    MENU_ITEM_KUNG_PAO_CHICKEN,
+    MENU_ITEM_STRAWBERRY_CUPCAKES,
+  ],
   pickedItems: {},
 };
 
 export const Picked = Template.bind({});
 Picked.args = {
-  items: RESTAURANT_LIST[0].menu,
+  items: [
+    MENU_ITEM_DUMPLINGS,
+    MENU_ITEM_KUNG_PAO_CHICKEN,
+    MENU_ITEM_STRAWBERRY_CUPCAKES,
+  ],
   pickedItems: {
-    M1: 1,
-    M2: 3,
+    [MENU_ITEM_DUMPLINGS.id]: 3,
+    [MENU_ITEM_STRAWBERRY_CUPCAKES.id]: 1,
   },
 };

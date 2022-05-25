@@ -1,7 +1,7 @@
 import { setupPreviews } from "@previewjs/plugin-react/setup";
-import { getMenuItem } from "../../pages/api/hardcoded-data";
 import type { MenuItem } from "../../pages/api/restaurants/[id]";
 import { Counter } from "../Counter/Counter";
+import { MENU_ITEM_STRAWBERRY_CUPCAKES } from "../testing/fixtures";
 
 export const RestaurantMenuItem = ({
   menuItem,
@@ -45,7 +45,7 @@ export const RestaurantMenuItem = ({
 
 setupPreviews(RestaurantMenuItem, () => {
   const base = {
-    menuItem: getMenuItem("JD4"),
+    menuItem: MENU_ITEM_STRAWBERRY_CUPCAKES,
   };
   return {
     example: {
