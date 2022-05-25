@@ -4,7 +4,7 @@ import { setupPreviews } from "@previewjs/plugin-react/setup";
 import Link from "next/link";
 import React from "react";
 import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
-import { RestaurantItem } from "./RestaurantItem";
+import type { RestaurantItem } from "../../pages/api/restaurants";
 
 export const RestaurantList = (props: {
   empty?: React.ReactNode;
