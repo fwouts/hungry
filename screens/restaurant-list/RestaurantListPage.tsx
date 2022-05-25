@@ -3,14 +3,12 @@ import {
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { setupPreviews } from "@previewjs/plugin-react/setup";
 import { observer } from "mobx-react-lite";
 import { useCallback, useMemo } from "react";
 import { AppState } from "../../AppState";
 import { NoMatch } from "../../design/NoMatch/NoMatch";
 import { RestaurantList } from "../../design/RestaurantList/RestaurantList";
 import { SearchHeader } from "../../design/SearchHeader/SearchHeader";
-import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 import { RestaurantListPageState } from "./RestaurantListPageState";
 
 export const RestaurantListPage = observer(
@@ -65,9 +63,3 @@ export const RestaurantListPage = observer(
     );
   }
 );
-
-setupPreviews(RestaurantListPage, {
-  example: {
-    appState: new AppState(RESTAURANT_LIST),
-  },
-});

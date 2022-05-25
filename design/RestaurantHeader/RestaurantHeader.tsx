@@ -1,8 +1,6 @@
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { setupPreviews } from "@previewjs/plugin-react/setup";
 import Link from "next/link";
-import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 
 export interface RestaurantHeaderProps {
   title: string;
@@ -30,10 +28,3 @@ export const RestaurantHeader = (props: RestaurantHeaderProps) => {
 };
 
 export default RestaurantHeader;
-
-setupPreviews(RestaurantHeader, {
-  default: {
-    title: "Restaurant name",
-    photoUrl: RESTAURANT_LIST[0].photoUrl,
-  },
-});

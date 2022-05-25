@@ -1,6 +1,4 @@
-import { setupPreviews } from "@previewjs/plugin-react/setup";
 import React from "react";
-import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 import type { RestaurantItem } from "../../pages/api/restaurants";
 import { RestaurantListItem } from "./RestaurantListItem";
 
@@ -17,9 +15,3 @@ export const RestaurantList = (props: {
     </div>
   );
 };
-
-setupPreviews(RestaurantList, {
-  example: {
-    restaurantList: RESTAURANT_LIST,
-  },
-});

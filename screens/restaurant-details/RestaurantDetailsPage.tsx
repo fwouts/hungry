@@ -3,13 +3,11 @@ import {
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { setupPreviews } from "@previewjs/plugin-react/setup";
 import { observer } from "mobx-react-lite";
 import { useCallback } from "react";
 import { AppState } from "../../AppState";
 import { RestaurantHeader } from "../../design/RestaurantHeader/RestaurantHeader";
 import { RestaurantMenu } from "../../design/RestaurantMenu/RestaurantMenu";
-import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 import { RestaurantDetailsPageState } from "./RestaurantDetailsPageState";
 
 export const RestaurantDetailsPage = observer(
@@ -77,14 +75,3 @@ export const RestaurantDetailsPage = observer(
     );
   }
 );
-
-setupPreviews(RestaurantDetailsPage, () => {
-  const state = new RestaurantDetailsPageState("1");
-  state.load(RESTAURANT_LIST[0]);
-  return {
-    example: {
-      appState: new AppState(),
-      state,
-    },
-  };
-});

@@ -1,7 +1,5 @@
-import { setupPreviews } from "@previewjs/plugin-react/setup";
 import type { MenuItem } from "../../pages/api/restaurants/[id]";
 import { Counter } from "../Counter/Counter";
-import { MENU_ITEM_STRAWBERRY_CUPCAKES } from "../testing/fixtures";
 
 export const RestaurantMenuItem = ({
   menuItem,
@@ -42,19 +40,3 @@ export const RestaurantMenuItem = ({
     </div>
   );
 };
-
-setupPreviews(RestaurantMenuItem, () => {
-  const base = {
-    menuItem: MENU_ITEM_STRAWBERRY_CUPCAKES,
-  };
-  return {
-    example: {
-      ...base,
-      count: 0,
-    },
-    picked: {
-      ...base,
-      count: 100,
-    },
-  };
-});

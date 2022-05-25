@@ -1,6 +1,4 @@
-import { setupPreviews } from "@previewjs/plugin-react/setup";
 import { observer } from "mobx-react-lite";
-import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 import type { MenuItem } from "../../pages/api/restaurants/[id]";
 import { RestaurantMenuItem } from "../RestaurantMenuItem/RestaurantMenuItem";
 
@@ -28,10 +26,3 @@ export const RestaurantMenu = observer(
     );
   }
 );
-
-setupPreviews(RestaurantMenu, {
-  example: {
-    items: RESTAURANT_LIST[0].menu,
-    pickedItems: {},
-  },
-});
