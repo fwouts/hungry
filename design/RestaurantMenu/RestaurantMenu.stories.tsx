@@ -3,7 +3,7 @@ import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 import { RestaurantMenu } from "./RestaurantMenu";
 
 export default {
-  title: "design/MenuPicker",
+  title: "design/RestaurantMenu",
   component: RestaurantMenu,
 };
 
