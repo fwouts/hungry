@@ -1,14 +1,14 @@
 import { ComponentStory } from "@storybook/react";
 import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
-import { MenuPicker } from "./MenuPicker";
+import { RestaurantMenu } from "./RestaurantMenu";
 
 export default {
   title: "design/MenuPicker",
-  component: MenuPicker,
+  component: RestaurantMenu,
 };
 
-const Template: ComponentStory<typeof MenuPicker> = (args) => (
-  <MenuPicker {...args} />
+const Template: ComponentStory<typeof RestaurantMenu> = (args) => (
+  <RestaurantMenu {...args} />
 );
 
 export const Default = Template.bind({});

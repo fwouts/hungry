@@ -3,7 +3,7 @@ import { getMenuItem } from "../../pages/api/hardcoded-data";
 import type { MenuItem } from "../../pages/api/restaurants/[id]";
 import { Counter } from "../Counter/Counter";
 
-export const MenuItemPicker = ({
+export const RestaurantMenuItem = ({
   menuItem,
   count,
   onUpdate,
@@ -43,7 +43,7 @@ export const MenuItemPicker = ({
   );
 };
 
-setupPreviews(MenuItemPicker, () => {
+setupPreviews(RestaurantMenuItem, () => {
   const base = {
     menuItem: getMenuItem("JD4"),
   };

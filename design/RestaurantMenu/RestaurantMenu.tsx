@@ -2,9 +2,9 @@ import { setupPreviews } from "@previewjs/plugin-react/setup";
 import { observer } from "mobx-react-lite";
 import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 import type { MenuItem } from "../../pages/api/restaurants/[id]";
-import { MenuItemPicker } from "../MenuItemPicker/MenuItemPicker";
+import { RestaurantMenuItem } from "../RestaurantMenuItem/RestaurantMenuItem";
 
-export const MenuPicker = observer(
+export const RestaurantMenu = observer(
   ({
     items,
     pickedItems,
@@ -17,7 +17,7 @@ export const MenuPicker = observer(
     return (
       <div className="rounded-lg overflow-hidden">
         {items.map((item) => (
-          <MenuItemPicker
+          <RestaurantMenuItem
             key={item.id}
             menuItem={item}
             count={pickedItems[item.id] || 0}
@@ -29,7 +29,7 @@ export const MenuPicker = observer(
   }
 );
 
-setupPreviews(MenuPicker, {
+setupPreviews(RestaurantMenu, {
   example: {
     items: RESTAURANT_LIST[0].menu,
     pickedItems: {},
