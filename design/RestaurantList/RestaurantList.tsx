@@ -9,7 +9,7 @@ export const RestaurantList = (props: {
   restaurantList: RestaurantItem[];
 }) => {
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="flex flex-col pt-2 gap-2 bg-white overflow-hidden">
       {props.restaurantList.length === 0 && props.empty}
       {props.restaurantList.map((restaurant) => (
         <RestaurantListItem key={restaurant.id} restaurant={restaurant} />
