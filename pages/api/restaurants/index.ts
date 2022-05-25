@@ -17,7 +17,7 @@ export default async function handler(
   res: NextApiResponse<RestaurantListResponse>
 ) {
   // Simulate waiting.
-  await new Promise((resolve) => setTimeout(resolve, 1500));
+  await new Promise((resolve) => setTimeout(resolve, 300));
 
   res.status(200).json({
     restaurants: RESTAURANT_LIST,
