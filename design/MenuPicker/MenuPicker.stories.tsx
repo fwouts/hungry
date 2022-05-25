@@ -1,6 +1,5 @@
 import { ComponentStory } from "@storybook/react";
-import React from "react";
-import { RESTAURANT_LIST } from "../../data";
+import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 import { MenuPicker } from "./MenuPicker";
 
 export default {

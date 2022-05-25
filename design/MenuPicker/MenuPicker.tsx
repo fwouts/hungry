@@ -1,7 +1,7 @@
 import { setupPreviews } from "@previewjs/plugin-react/setup";
 import { observer } from "mobx-react-lite";
-import { RESTAURANT_LIST } from "../../data";
-import { MenuItemData } from "../../models";
+import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
+import type { MenuItem } from "../../pages/api/restaurants/[id]";
 import { MenuItemPicker } from "../MenuItemPicker/MenuItemPicker";
 
 export const MenuPicker = observer(
@@ -10,7 +10,7 @@ export const MenuPicker = observer(
     pickedItems,
     onUpdateItem,
   }: {
-    items: MenuItemData[];
+    items: MenuItem[];
     pickedItems: Record<string, number>;
     onUpdateItem(itemId: string, count: number): void;
   }) => {

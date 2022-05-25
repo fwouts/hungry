@@ -2,7 +2,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { setupPreviews } from "@previewjs/plugin-react/setup";
 import Link from "next/link";
-import { RESTAURANT_LIST } from "../../data";
+import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 
 export interface HeroHeaderProps {
   title: string;

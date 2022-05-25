@@ -1,6 +1,6 @@
 import { setupPreviews } from "@previewjs/plugin-react/setup";
-import { getMenuItemData } from "../../data";
-import { MenuItemData } from "../../models";
+import { getMenuItem } from "../../pages/api/hardcoded-data";
+import type { MenuItem } from "../../pages/api/restaurants/[id]";
 import { Counter } from "../Counter/Counter";
 
 export const MenuItemPicker = ({
@@ -8,7 +8,7 @@ export const MenuItemPicker = ({
   count,
   onUpdate,
 }: {
-  menuItem: MenuItemData;
+  menuItem: MenuItem;
   count: number;
   onUpdate(count: number): void;
 }) => {
@@ -45,7 +45,7 @@ export const MenuItemPicker = ({
 
 setupPreviews(MenuItemPicker, () => {
   const base = {
-    menuItem: getMenuItemData("JD4"),
+    menuItem: getMenuItem("JD4"),
   };
   return {
     example: {

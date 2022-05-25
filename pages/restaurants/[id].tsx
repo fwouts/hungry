@@ -1,27 +1,21 @@
 import { setupPreviews } from "@previewjs/plugin-react/setup";
 import type { GetServerSideProps, NextPage } from "next";
-import { useRouter } from "next/router";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { AppStateContext } from "../../AppState";
-import { RESTAURANT_LIST } from "../../data";
 import { RestaurantDetailsPage } from "../../screens/restaurant-details";
+import { RestaurantDetailsPageState } from "../../screens/restaurant-details/RestaurantDetailsPageState";
+import { RESTAURANT_LIST } from "../api/hardcoded-data";
 
 const RestaurantPage: NextPage<{
   restaurantId: string;
-}> = (props) => {
-  const state = useContext(AppStateContext);
-  const router = useRouter();
-  let restaurantId: string;
-  if (router) {
-    const { id } = router.query;
-    if (typeof id !== "string") {
-      throw new Error(`Invalid restaurant ID: ${id}`);
-    }
-    restaurantId = id;
-  } else {
-    ({ restaurantId } = props);
-  }
-  return <RestaurantDetailsPage appState={state} restaurantId={restaurantId} />;
+}> = ({ restaurantId }) => {
+  const appState = useContext(AppStateContext);
+  const state = useMemo(() => {
+    const state = new RestaurantDetailsPageState(restaurantId);
+    state.load();
+    return state;
+  }, [restaurantId]);
+  return <RestaurantDetailsPage appState={appState} state={state} />;
 };
 
 setupPreviews(RestaurantPage, {

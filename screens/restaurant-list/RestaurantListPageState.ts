@@ -14,8 +14,10 @@ export class RestaurantListPageState {
 
   get filteredRestaurantList() {
     const search = this.search.toLowerCase().trim();
-    return this.app.restaurantList.filter((restaurant) =>
-      restaurant.name.toLowerCase().includes(search)
+    return (
+      this.app.status.restaurantList?.filter((restaurant) =>
+        restaurant.name.toLowerCase().includes(search)
+      ) || []
     );
   }
 }

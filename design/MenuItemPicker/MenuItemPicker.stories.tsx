@@ -1,6 +1,5 @@
 import { ComponentStory } from "@storybook/react";
-import React from "react";
-import { getMenuItemData } from "../../data";
+import { getMenuItem } from "../../pages/api/hardcoded-data";
 import { MenuItemPicker } from "./MenuItemPicker";
 
 export default {
@@ -14,12 +13,12 @@ const Template: ComponentStory<typeof MenuItemPicker> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  menuItem: getMenuItemData("JD4"),
+  menuItem: getMenuItem("JD4"),
   count: 0,
 };
 
 export const Picked = Template.bind({});
 Picked.args = {
-  menuItem: getMenuItemData("JD4"),
+  menuItem: getMenuItem("JD4"),
   count: 3,
 };

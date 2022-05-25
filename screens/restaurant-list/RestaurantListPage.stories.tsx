@@ -1,5 +1,5 @@
 import { AppState } from "../../AppState";
-import { RESTAURANT_LIST } from "../../data";
+import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 import { RestaurantListPage } from "./RestaurantListPage";
 
 export default {

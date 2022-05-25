@@ -1,6 +1,6 @@
 import React from "react";
 import { AppState, AppStateContext } from "../AppState";
-import { RESTAURANT_LIST } from "../data";
+import { RESTAURANT_LIST } from "../pages/api/hardcoded-data";
 import { ScreenContainer } from "../screens/ScreenContainer";
 import "../styles/globals.css";
 
