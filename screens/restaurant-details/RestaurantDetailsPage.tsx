@@ -7,7 +7,7 @@ import { setupPreviews } from "@previewjs/plugin-react/setup";
 import { observer } from "mobx-react-lite";
 import { useCallback } from "react";
 import { AppState } from "../../AppState";
-import { HeroHeader } from "../../design/HeroHeader/HeroHeader";
+import { RestaurantHeader } from "../../design/RestaurantHeader/RestaurantHeader";
 import { RestaurantMenu } from "../../design/RestaurantMenu/RestaurantMenu";
 import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 import { RestaurantDetailsPageState } from "./RestaurantDetailsPageState";
@@ -43,7 +43,7 @@ export const RestaurantDetailsPage = observer(
       if (restaurantItem) {
         return (
           <>
-            <HeroHeader
+            <RestaurantHeader
               title={restaurantItem.name}
               photoUrl={restaurantItem.photoUrl}
             />
@@ -64,7 +64,10 @@ export const RestaurantDetailsPage = observer(
 
     return (
       <>
-        <HeroHeader title={restaurant.name} photoUrl={restaurant.photoUrl} />
+        <RestaurantHeader
+          title={restaurant.name}
+          photoUrl={restaurant.photoUrl}
+        />
         <RestaurantMenu
           items={restaurant.menu}
           pickedItems={state.pickedItems}

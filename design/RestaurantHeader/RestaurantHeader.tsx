@@ -4,12 +4,12 @@ import { setupPreviews } from "@previewjs/plugin-react/setup";
 import Link from "next/link";
 import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
 
-export interface HeroHeaderProps {
+export interface RestaurantHeaderProps {
   title: string;
   photoUrl: string;
 }
 
-export const HeroHeader = (props: HeroHeaderProps) => {
+export const RestaurantHeader = (props: RestaurantHeaderProps) => {
   return (
     <div
       className="text-white text-xl font-semibold pb-32 bg-no-repeat bg-cover bg-center"
@@ -29,9 +29,9 @@ export const HeroHeader = (props: HeroHeaderProps) => {
   );
 };
 
-export default HeroHeader;
+export default RestaurantHeader;
 
-setupPreviews(HeroHeader, {
+setupPreviews(RestaurantHeader, {
   default: {
     title: "Restaurant name",
     photoUrl: RESTAURANT_LIST[0].photoUrl,

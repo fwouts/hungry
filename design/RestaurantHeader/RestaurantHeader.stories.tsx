@@ -1,13 +1,15 @@
 import { Story } from "@storybook/react";
 import { RESTAURANT_LIST } from "../../pages/api/hardcoded-data";
-import { HeroHeader, HeroHeaderProps } from "./HeroHeader";
+import { RestaurantHeader, RestaurantHeaderProps } from "./RestaurantHeader";
 
 export default {
-  title: "design/HeroHeader",
-  component: HeroHeader,
+  title: "design/RestaurantHeader",
+  component: RestaurantHeader,
 };
 
-const Template: Story<HeroHeaderProps> = (args) => <HeroHeader {...args} />;
+const Template: Story<RestaurantHeaderProps> = (args) => (
+  <RestaurantHeader {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {
