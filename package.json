@@ -14,7 +14,6 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
-    "@previewjs/plugin-react": "^3.1.2",
     "autoprefixer": "^10.4.7",
     "mobx": "^6.6.0",
     "mobx-react-lite": "^3.4.0",
@@ -25,8 +24,7 @@
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
-    "@previewjs/cli": "^1.2.0",
-    "@previewjs/pro": "^1.4.0",
+    "@previewjs/cli": "^1.9.0",
     "@storybook/addon-actions": "^6.5.5",
     "@storybook/addon-essentials": "^6.5.5",
     "@storybook/addon-links": "^6.5.5",
