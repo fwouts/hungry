@@ -1,6 +1,9 @@
+const { mergeConfig } = require("vite");
+const { svgr } = require("vite-plugin-react-svgr");
+
 module.exports = {
   core: {
-    builder: "webpack5",
+    builder: "@storybook/builder-vite",
   },
   stories: [
     "../design/**/*.stories.mdx",
@@ -18,23 +21,14 @@ module.exports = {
       },
     },
   ],
-  webpackFinal: async (config) => {
-    const fileLoaderRule = config.module.rules.find(
-      (rule) => !Array.isArray(rule.test) && rule.test?.test(".svg")
-    );
-    fileLoaderRule.exclude = /\.svg$/;
-    config.module.rules.unshift({
-      test: /\.svg$/,
-      use: [
-        {
-          loader: "@svgr/webpack",
-          options: {
-            dimensions: false,
-          },
-        },
-        "url-loader",
+  async viteFinal(config, { configType }) {
+    // return the customized config
+    return mergeConfig(config, {
+      plugins: [
+        svgr({
+          exportAs: "ReactComponent",
+        }),
       ],
     });
-    return config;
   },
 };

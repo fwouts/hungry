@@ -29,6 +29,7 @@
     "@storybook/addon-essentials": "^6.5.5",
     "@storybook/addon-links": "^6.5.5",
     "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-vite": "~0.1.0",
     "@storybook/builder-webpack5": "^6.5.5",
     "@storybook/manager-webpack5": "^6.5.5",
     "@storybook/react": "^6.5.5",
@@ -39,6 +40,7 @@
     "playwright": "^1.22.2",
     "typescript": "4.7.2",
     "url-loader": "^4.1.1",
+    "vite-plugin-react-svgr": "^1.0.1",
     "viteshot": "^0.3.1"
   }
 }
