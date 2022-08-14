@@ -8,12 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "ladle": "ladle dev",
+    "build-ladle": "ladle build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@ladle/react": "^2.1.0",
     "autoprefixer": "^10.4.7",
     "clsx": "^1.2.1",
     "mobx": "^6.6.1",
