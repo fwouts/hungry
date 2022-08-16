@@ -8,8 +8,12 @@ export default defineConfig({
     }),
   ],
   define: {
-    process: JSON.stringify({
-      env: {},
-    }),
+    "process.env.__NEXT_HAS_REWRITES": JSON.stringify(false),
+    "process.env.__NEXT_I18N_SUPPORT": JSON.stringify(false),
+    "process.env.__NEXT_MANUAL_CLIENT_BASE_PATH": JSON.stringify(""),
+    "process.env.__NEXT_NEW_LINK_BEHAVIOR": JSON.stringify(0),
+    "process.env.__NEXT_ROUTER_BASEPATH": JSON.stringify(""),
+    "process.env.__NEXT_SCROLL_RESTORATION": JSON.stringify(null),
+    "process.env.__NEXT_TRAILING_SLASH": JSON.stringify(false),
   },
 });
