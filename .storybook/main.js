@@ -1,10 +1,12 @@
 const { mergeConfig } = require("vite");
+
 const { svgr } = require("vite-plugin-react-svgr");
 
 module.exports = {
   core: {
     builder: "@storybook/builder-vite",
   },
+  framework: "@storybook/react",
   stories: [
     "../design/**/*.stories.mdx",
     "../design/**/*.stories.@(js|jsx|ts|tsx)",
@@ -21,6 +23,7 @@ module.exports = {
       },
     },
   ],
+
   async viteFinal(config, { configType }) {
     // return the customized config
     return mergeConfig(config, {
