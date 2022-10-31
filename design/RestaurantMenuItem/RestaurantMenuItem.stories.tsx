@@ -7,18 +7,16 @@ export default {
   component: RestaurantMenuItem,
 };
 
-const Template: ComponentStory<typeof RestaurantMenuItem> = (args) => (
-  <RestaurantMenuItem {...args} />
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  menuItem: MENU_ITEM_STRAWBERRY_CUPCAKES,
-  count: 0,
+export const Default: ComponentStory<typeof RestaurantMenuItem> = {
+  args: {
+    menuItem: MENU_ITEM_STRAWBERRY_CUPCAKES,
+    count: 0,
+  },
 };
 
-export const Picked = Template.bind({});
-Picked.args = {
-  menuItem: MENU_ITEM_STRAWBERRY_CUPCAKES,
-  count: 3,
+export const Picked: ComponentStory<typeof RestaurantMenuItem> = {
+  args: {
+    menuItem: MENU_ITEM_STRAWBERRY_CUPCAKES,
+    count: 3,
+  },
 };

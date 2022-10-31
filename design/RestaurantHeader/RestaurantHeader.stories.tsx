@@ -7,12 +7,9 @@ export default {
   component: RestaurantHeader,
 };
 
-const Template: Story<RestaurantHeaderProps> = (args) => (
-  <RestaurantHeader {...args} />
-);
-
-export const Example = Template.bind({});
-Example.args = {
-  title: "Restaurant name",
-  photoUrl: RESTAURANT_LIST[0].photoUrl,
+export const Example: Story<RestaurantHeaderProps> = {
+  args: {
+    title: "Restaurant name",
+    photoUrl: RESTAURANT_LIST[0].photoUrl,
+  },
 };

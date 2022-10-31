@@ -1,5 +1,4 @@
 import { ComponentStory } from "@storybook/react";
-import React from "react";
 import { SearchHeader } from "./SearchHeader";
 
 export default {
@@ -7,16 +6,14 @@ export default {
   component: SearchHeader,
 };
 
-const Template: ComponentStory<typeof SearchHeader> = (args) => (
-  <SearchHeader {...args} />
-);
-
-export const Empty = Template.bind({});
-Empty.args = {
-  search: "",
+export const Empty: ComponentStory<typeof SearchHeader> = {
+  args: {
+    search: "",
+  },
 };
 
-export const Filled = Template.bind({});
-Filled.args = {
-  search: "foo",
+export const Filled: ComponentStory<typeof SearchHeader> = {
+  args: {
+    search: "foo",
+  },
 };

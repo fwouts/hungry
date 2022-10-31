@@ -8,17 +8,15 @@ export default {
   component: RestaurantList,
 };
 
-const Template: ComponentStory<typeof RestaurantList> = (args) => (
-  <RestaurantList {...args} />
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  restaurantList: RESTAURANT_LIST,
+export const Default: ComponentStory<typeof RestaurantList> = {
+  args: {
+    restaurantList: RESTAURANT_LIST,
+  },
 };
 
-export const Empty = Template.bind({});
-Empty.args = {
-  empty: <NoMatch message="No match" />,
-  restaurantList: [],
+export const Empty: ComponentStory<typeof RestaurantList> = {
+  args: {
+    empty: <NoMatch message="No match" />,
+    restaurantList: [],
+  },
 };

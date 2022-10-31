@@ -1,5 +1,4 @@
 import { Story } from "@storybook/react";
-import React from "react";
 import { Counter, CounterProps } from "./Counter";
 
 export default {
@@ -7,14 +6,14 @@ export default {
   component: Counter,
 };
 
-const Template: Story<CounterProps> = (args) => <Counter {...args} />;
-
-export const Zero = Template.bind({});
-Zero.args = {
-  count: 0,
+export const Zero: Story<CounterProps> = {
+  args: {
+    count: 0,
+  },
 };
 
-export const Positive = Template.bind({});
-Positive.args = {
-  count: 5,
+export const Positive: Story<CounterProps> = {
+  args: {
+    count: 5,
+  },
 };

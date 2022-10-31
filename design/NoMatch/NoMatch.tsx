@@ -1,5 +1,6 @@
 import { faBan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import React from "react";
 import { ReactComponent as NotFoundImage } from "./undraw_not_found_60pq.svg";
 
@@ -11,6 +12,9 @@ export const NoMatch = (props: { message: React.ReactNode }) => {
         <div className="w-8 text-gray-500">
           <FontAwesomeIcon icon={faBan} />
         </div>
+        <Link href="/">
+          <a>Testing</a>
+        </Link>
         <div className="text-gray-700">{props.message}</div>
       </div>
     </div>
