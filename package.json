@@ -2,6 +2,9 @@
   "name": "hungry",
   "version": "0.1.0",
   "private": true,
+  "stackblitz": {
+    "startCommand": "pnpm previewjs"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
