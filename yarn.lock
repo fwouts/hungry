@@ -2032,10 +2032,10 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@previewjs/cli@^1.17.0":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@previewjs/cli/-/cli-1.17.0.tgz#f41a798cb977fe2a034697772aa20e268750087f"
-  integrity sha512-u18pAq4x9QmWe4Ql6//oBvCBolqrCoZzoWatmsszFbbeLjjb6ELORR36DyGYdRlMkiOxFwAedQwN7cx7GnZjwA==
+"@previewjs/cli@^1.20.2":
+  version "1.20.2"
+  resolved "https://registry.yarnpkg.com/@previewjs/cli/-/cli-1.20.2.tgz#d70115c439e4ec17f0077afe4a2f33d6d4d733db"
+  integrity sha512-jT69hbAZPWqgqEGv/TuH2k48v7nxWo36+j/pROhB9fX/2It688kOmC0gro9HyLwi3etN8SuQ/GqCbgECBgAJAw==
 
 "@rollup/pluginutils@^4.2.1":
   version "4.2.1"
