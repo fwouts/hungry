@@ -32,10 +32,9 @@ jobs:
             ${{ runner.OS }}-yarn-
       - run: yarn --frozen-lockfile
       - run: yarn playwright install
-      - run: yarn generate-screenshots
+      - run: yarn generate-screenshots && git add .
       - name: Update screenshots on non-main branches
         run: |
-          git add .
           if [ -z "$(git diff --exit-code)" ]; then
             echo "No changes detected."
           else
@@ -60,7 +59,7 @@ jobs:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
           MATRIX_OS: ${{ matrix.os }}
       - name: Fail if screenshots have changed on main branch
-        run: git add . && git diff --exit-code
+        run: git diff --exit-code
         if: ${{ github.ref == 'refs/heads/main' }}
       - uses: actions/upload-artifact@v2
         if: failure()
