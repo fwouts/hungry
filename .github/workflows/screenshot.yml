@@ -32,7 +32,35 @@ jobs:
             ${{ runner.OS }}-yarn-
       - run: yarn --frozen-lockfile
       - run: yarn playwright install
-      - run: yarn viteshot -p
+      - run: yarn generate-screenshots && git add .
+      - name: Update screenshots on non-main branches
+        run: |
+          if [[ $(git status --short) ]]; then
+            git status
+            git stash
+            git config user.name 'CI bot'
+            git config user.email 'ci-bot@users.noreply.github.com'
+            git fetch
+            git checkout ${{ github.head_ref }}
+            git pull
+            git stash pop || echo "Conflict on git stash pop."
+            git commit --allow-empty -am "bot: update screenshots ($MATRIX_OS)"
+            if ! git push origin ${{ github.head_ref }}; then
+              # Try again as it may be a race condition.
+              git pull --rebase
+              git push origin ${{ github.head_ref }}
+            fi
+          else
+            echo "No changes detected."
+          fi
+        if: ${{ github.ref != 'refs/heads/main' }}
+        shell: bash
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
+          MATRIX_OS: ${{ matrix.os }}
+      - name: Fail if screenshots have changed on main branch
+        run: git diff --exit-code
+        if: ${{ github.ref == 'refs/heads/main' }}
       - uses: actions/upload-artifact@v2
         if: failure()
         with:
