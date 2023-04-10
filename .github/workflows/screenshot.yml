@@ -35,9 +35,7 @@ jobs:
       - run: yarn generate-screenshots && git add .
       - name: Update screenshots on non-main branches
         run: |
-          if [ -z "$(git diff --exit-code)" ]; then
-            echo "No changes detected."
-          else
+          if [[ $(git status --short) ]]; then
             git status
             git stash
             git config user.name 'CI bot'
@@ -52,6 +50,8 @@ jobs:
               git pull --rebase
               git push origin ${{ github.head_ref }}
             fi
+          else
+            echo "No changes detected."
           fi
         if: ${{ github.ref != 'refs/heads/main' }}
         shell: bash
