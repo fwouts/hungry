@@ -17,7 +17,7 @@ for (const [viewport, deviceDescriptor] of viewports) {
       const baseName = path.basename(filePath);
       const baseNameNoExt = baseName.substring(
         0,
-        baseName.length - path.extname(baseName)
+        baseName.length - path.extname(baseName).length
       );
       return `${path.dirname(
         filePath
