@@ -1,4 +1,4 @@
-import { ComponentStory } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
 import {
   MENU_ITEM_DUMPLINGS,
   MENU_ITEM_KUNG_PAO_CHICKEN,
@@ -11,7 +11,7 @@ export default {
   component: RestaurantMenu,
 };
 
-export const Default: ComponentStory<typeof RestaurantMenu> = {
+export const Default: StoryObj<typeof RestaurantMenu> = {
   args: {
     items: [
       MENU_ITEM_DUMPLINGS,
@@ -22,7 +22,7 @@ export const Default: ComponentStory<typeof RestaurantMenu> = {
   },
 };
 
-export const Picked: ComponentStory<typeof RestaurantMenu> = {
+export const Picked: StoryObj<typeof RestaurantMenu> = {
   args: {
     items: [
       MENU_ITEM_DUMPLINGS,

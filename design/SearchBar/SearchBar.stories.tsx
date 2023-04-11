@@ -1,4 +1,4 @@
-import { ComponentStory } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
 import { SearchBar } from "./SearchBar";
 
 export default {
@@ -6,13 +6,13 @@ export default {
   component: SearchBar,
 };
 
-export const Empty: ComponentStory<typeof SearchBar> = {
+export const Empty: StoryObj<typeof SearchBar> = {
   args: {
     search: "",
   },
 };
 
-export const Filled: ComponentStory<typeof SearchBar> = {
+export const Filled: StoryObj<typeof SearchBar> = {
   args: {
     search: "foo",
   },

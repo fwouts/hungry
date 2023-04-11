@@ -1,4 +1,4 @@
-import { Story } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
 import { Counter, CounterProps } from "./Counter";
 
 export default {
@@ -6,13 +6,13 @@ export default {
   component: Counter,
 };
 
-export const Zero: Story<CounterProps> = {
+export const Zero: StoryObj<CounterProps> = {
   args: {
     count: 0,
   },
 };
 
-export const Positive: Story<CounterProps> = {
+export const Positive: StoryObj<CounterProps> = {
   args: {
     count: 5,
   },

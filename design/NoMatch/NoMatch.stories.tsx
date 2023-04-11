@@ -1,4 +1,4 @@
-import { ComponentStory } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
 import { NoMatch } from "./NoMatch";
 
 export default {
@@ -6,13 +6,13 @@ export default {
   component: NoMatch,
 };
 
-export const Default: ComponentStory<typeof NoMatch> = {
+export const Default: StoryObj<typeof NoMatch> = {
   args: {
     message: "No match",
   },
 };
 
-export const ComplexChild: ComponentStory<typeof NoMatch> = {
+export const ComplexChild: StoryObj<typeof NoMatch> = {
   args: {
     message: (
       <>
