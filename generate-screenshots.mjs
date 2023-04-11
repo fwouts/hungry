@@ -23,7 +23,7 @@ for (const [viewport, deviceDescriptor] of viewports) {
         filePath
       )}/__screenshots__/${os.platform()}/${viewport}/${baseNameNoExt}-${name}.png`;
     },
-    onScreenshot({ filePath, name }) {
+    onScreenshotGenerated({ filePath, name }) {
       console.log(`${filePath} 📸 ${name}`);
     },
   });

@@ -1710,10 +1710,10 @@
     "@previewjs/serializable-values" "^6.0.3"
     "@previewjs/type-analyzer" "^7.3.1"
 
-"@previewjs/screenshot@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@previewjs/screenshot/-/screenshot-0.0.2.tgz#aa6720d4b8753973109b10f7e459a6778ec6da32"
-  integrity sha512-uwasN0eabhtaiZ8+UXDqb4nASoOMwQ9VvLs8NlT4jEf1/FRQbNpofglXO31XxqZhcLMQYqXq6lJuNXdCan3DMQ==
+"@previewjs/screenshot@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@previewjs/screenshot/-/screenshot-0.1.0.tgz#b8a95ae5bf4f4478ac1f409e3e461e560c1e8bed"
+  integrity sha512-7zP7Oa0NAQiKPS4XE0oFW8AS33qjy+1X7U6TUWbdy2QUFfhbIK+kU/yWu6MAgcYPrvXC+Joa3Own2gFyWD7hNw==
   dependencies:
     "@previewjs/api" "^11.0.0"
     "@previewjs/chromeless" "^5.0.1"
