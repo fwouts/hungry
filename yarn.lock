@@ -1908,15 +1908,6 @@
     prop-types "^15.7.2"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-mdx-gfm@^7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-mdx-gfm/-/addon-mdx-gfm-7.0.2.tgz#b99b9ffc71bbf54b4a44a4a98001cc44213f3661"
-  integrity sha512-MS4K7cG99gmLogKzsks6t8OejzX0I23MX9niiXFuhe2s1pL2MkBRdkoJ3Bulc8HO8dgnMy7qrkFWy+KFUDn8FA==
-  dependencies:
-    "@storybook/node-logger" "7.0.0-beta.52"
-    remark-gfm "^3.0.1"
-    ts-dedent "^2.0.0"
-
 "@storybook/addon-measure@7.0.2":
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-measure/-/addon-measure-7.0.2.tgz#2c2ea7f09fd34e68728adba4c3250a0c9699351b"
@@ -1943,11 +1934,6 @@
     "@storybook/preview-api" "7.0.2"
     "@storybook/types" "7.0.2"
     ts-dedent "^2.0.0"
-
-"@storybook/addon-styling@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-styling/-/addon-styling-0.3.2.tgz#c393fd9f1647f7748a41601c0b6516dc0a7e939e"
-  integrity sha512-ztKy9uU2yKBtvBp4/Km4LD1JCNNFHpXS33LjbeIfho0toRv100g8tUojrdnoRX1b2KVK6cqep5mJV0z2ak9hIQ==
 
 "@storybook/addon-toolbars@7.0.2":
   version "7.0.2"
@@ -2331,16 +2317,6 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@storybook/mdx2-csf/-/mdx2-csf-1.0.0.tgz#ce4b2e44c9082bf382db835eef611b0097b7d771"
   integrity sha512-dBAnEL4HfxxJmv7LdEYUoZlQbWj9APZNIbOaq0tgF8XkxiIbzqvgB0jhL/9UOrysSDbQWBiCRTu2wOVxedGfmw==
-
-"@storybook/node-logger@7.0.0-beta.52":
-  version "7.0.0-beta.52"
-  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-7.0.0-beta.52.tgz#87ac562370b80ca6bc9f0f58549f31838019d525"
-  integrity sha512-F6F3QxsNWCg23eqvNgNYjta90nH3DPiBUyQa+iE/4YQhIdkYBzYMiYhQjF/sKr/gW3GPMXZxP93emqzADGaE1w==
-  dependencies:
-    "@types/npmlog" "^4.1.2"
-    chalk "^4.1.0"
-    npmlog "^5.0.1"
-    pretty-hrtime "^1.0.3"
 
 "@storybook/node-logger@7.0.2":
   version "7.0.2"

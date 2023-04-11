@@ -1,34 +1,20 @@
-const {
-  mergeConfig
-} = require("vite");
-const {
-  svgr
-} = require("vite-plugin-react-svgr");
+const { mergeConfig } = require("vite");
 module.exports = {
-  stories: ["../design/**/*.stories.mdx", "../design/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials", {
-    name: "@storybook/addon-styling",
-    options: {
-      postcssLoaderOptions: {
-        implementation: require("postcss")
-      }
-    }
-  }, "@storybook/addon-mdx-gfm"],
-  async viteFinal(config, {
-    configType
-  }) {
-    // return the customized config
+  stories: [
+    "../design/**/*.stories.mdx",
+    "../design/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+  async viteFinal(config, { configType }) {
     return mergeConfig(config, {
-      plugins: [svgr({
-        exportAs: "ReactComponent"
-      })]
+      // Insert any custom Vite config here.
     });
   },
   framework: {
     name: "@storybook/react-vite",
-    options: {}
+    options: {},
   },
   docs: {
-    autodocs: true
-  }
+    autodocs: true,
+  },
 };

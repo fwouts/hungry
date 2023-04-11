@@ -16,10 +16,11 @@ export const RestaurantHeader = (props: RestaurantHeaderProps) => {
       }}
     >
       <div className="bg-gray-800 bg-opacity-60 flex flex-row items-center py-4">
-        <Link href="/">
-          <a className="mx-3 p-2 text-sm bg-gray-200 text-black rounded-full hover:bg-white">
-            <FontAwesomeIcon icon={faChevronLeft} fixedWidth />
-          </a>
+        <Link
+          href="/"
+          className="mx-3 p-2 text-sm bg-gray-200 text-black rounded-full hover:bg-white"
+        >
+          <FontAwesomeIcon icon={faChevronLeft} fixedWidth />
         </Link>
         <h1>{props.title}</h1>
       </div>

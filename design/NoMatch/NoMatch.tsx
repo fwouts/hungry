@@ -12,9 +12,7 @@ export const NoMatch = (props: { message: React.ReactNode }) => {
         <div className="w-8 text-gray-500">
           <FontAwesomeIcon icon={faBan} />
         </div>
-        <Link href="/">
-          <a>Testing</a>
-        </Link>
+        <Link href="/">Testing</Link>
         <div className="text-gray-700">{props.message}</div>
       </div>
     </div>
