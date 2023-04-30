@@ -96,6 +96,9 @@ devDependencies:
   url-loader:
     specifier: ^4.1.1
     version: 4.1.1(webpack@5.81.0)
+  vite:
+    specifier: ^4.3.3
+    version: 4.3.3(@types/node@18.16.2)
   vite-plugin-react-svgr:
     specifier: ^1.0.1
     version: 1.0.1
@@ -2015,7 +2018,7 @@ packages:
   /@mdx-js/react@2.3.0(react@18.2.0):
     resolution: {integrity: sha512-zQH//gdOmuu7nt2oJR29vFhDv88oGPmVw6BggmrHeMI+xgEkp1B2dX9/bMBSYtK0dyLX/aOmesKS09g222K1/g==}
     peerDependencies:
-      react: '>=16 || ^18'
+      react: '>=16'
     dependencies:
       '@types/mdx': 2.0.5
       '@types/react': 18.0.34
